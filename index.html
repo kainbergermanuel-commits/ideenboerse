@@ -1,0 +1,636 @@
+<title>Ideen-Börse PH Niederösterreich</title>
+<style>
+  :root {
+    --ground: #FBFCFC;
+    --paper: #FFFFFF;
+    --ink: #1A1F21;
+    --ink-soft: #4E5860;
+    --label: #858D94;
+    --accent: #0E7F78;
+    --accent-ink: #0E7F78;
+    --fill-accent: #E2F0EE;
+    --fill-quiet: #F0F7F6;
+    --hairline: #E1E4DE;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #101516;
+      --paper: #171E1F;
+      --ink: #E7EBEA;
+      --ink-soft: #A8B2B2;
+      --label: #8B9695;
+      --accent: #63C1B7;
+      --accent-ink: #7FD2C8;
+      --fill-accent: #1B2C2B;
+      --fill-quiet: #18211F;
+      --hairline: #2A3334;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #101516;
+    --paper: #171E1F;
+    --ink: #E7EBEA;
+    --ink-soft: #A8B2B2;
+    --label: #8B9695;
+    --accent: #63C1B7;
+    --accent-ink: #7FD2C8;
+    --fill-accent: #1B2C2B;
+    --fill-quiet: #18211F;
+    --hairline: #2A3334;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Trebuchet MS", "Lucida Grande", "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-inline: 22px;
+    padding-block: 40px 88px;
+  }
+
+  /* Kopfzeile */
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    justify-content: space-between;
+    font-size: 11.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--label);
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 10px;
+  }
+  h1 {
+    font-size: clamp(30px, 5.4vw, 40px);
+    line-height: 1.16;
+    font-weight: 400;
+    text-wrap: balance;
+    margin: 26px 0 0;
+    letter-spacing: -.012em;
+  }
+  .standfirst {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 14px 0 0;
+  }
+
+  /* Abschnitte */
+  section { margin-top: 48px; }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin: 0 0 6px;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.28;
+    text-wrap: balance;
+    margin: 0 0 12px;
+    letter-spacing: -.008em;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--accent-ink);
+    margin: 26px 0 6px;
+  }
+  p { margin: 0 0 14px; max-width: 66ch; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: bold; }
+  em { font-style: normal; background: var(--fill-accent); padding: 0 .25em; border-radius: 2px; }
+
+  ul { margin: 0 0 14px; padding-left: 0; list-style: none; max-width: 66ch; }
+  ul li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 7px;
+  }
+  ul li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  /* Zahlenzeile */
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin: 22px 0 0;
+  }
+  .fig { background: var(--paper); padding: 18px 16px; }
+  .fig-n {
+    font-size: 34px;
+    line-height: 1;
+    color: var(--accent-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .fig-l {
+    display: block;
+    margin-top: 7px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* Boxen */
+  .box {
+    background: var(--fill-accent);
+    padding: 18px 20px;
+    margin: 20px 0;
+    border-radius: 3px;
+  }
+  .box.quiet { background: var(--fill-quiet); }
+  .box-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    display: block;
+    margin-bottom: 7px;
+  }
+  .box p { max-width: 60ch; }
+
+  /* Schrittfolge */
+  .step {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 0 14px;
+    padding: 20px 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .step-n {
+    font-size: 26px;
+    line-height: 1.1;
+    color: var(--accent);
+    grid-row: span 2;
+  }
+  .step-h { font-size: 17px; font-weight: bold; margin: 0 0 5px; }
+  .step p { margin-bottom: 10px; }
+  .step p:last-child { margin-bottom: 0; }
+
+  /* Tabelle */
+  .tablewrap { overflow-x: auto; margin: 18px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 440px; }
+  th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    padding: 0 12px 7px 0;
+    border-bottom: 2px solid var(--accent);
+  }
+  td {
+    padding: 11px 12px 11px 0;
+    border-bottom: 1px solid var(--hairline);
+    vertical-align: top;
+    font-size: 15px;
+  }
+  td:first-child { font-weight: bold; width: 32%; }
+  tr:last-child td { border-bottom: none; }
+
+  /* Checkliste offene Punkte */
+  .todo { margin: 0; padding: 0; list-style: none; max-width: 66ch; }
+  .todo li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 0 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .todo li::before { content: none; }
+  .todo .bx { color: var(--accent); font-size: 17px; line-height: 1.5; }
+  .todo b { display: block; }
+  .todo span.note { color: var(--ink-soft); font-size: 14.5px; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline);
+    font-size: 11.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--label);
+  }
+
+  @media (max-width: 540px) {
+    .figures { grid-template-columns: 1fr; }
+    .fig-n { font-size: 30px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="meta">
+    <span>Mittelschule Hirtenberg · Ideen-Börse PH Niederösterreich</span>
+    <span>Konzeptvorschlag · 16.09.2026</span>
+  </div>
+
+  <h1>Was wir an der Ideen-Börse zeigen, und wie</h1>
+  <p class="standfirst">Ein Vorschlag, wie wir aus einer Stunde Messebetrieb, zwei Tischen und einer
+  Stehwand das Beste herausholen. Mit Erasmus+ als Thema und einer klaren Rolle für alle, die
+  mitfahren.</p>
+
+  <section>
+    <p class="eyebrow">Ausgangslage</p>
+    <h2>Wir präsentieren nicht uns, wir geben etwas her</h2>
+    <p>Der Rahmen ist eng: eine Stunde, freier Publikumsverkehr, kein Strom, kein Beamer, wenig
+    Platz, viele Schulen gleichzeitig. Eine Präsentation im klassischen Sinn ist darin nicht
+    möglich, und sie wäre auch das falsche Werkzeug.</p>
+    <p>Denn eine Lehrerin aus einer fremden Schule bleibt nicht stehen, weil unsere Schule
+    beeindruckend ist. Sie bleibt stehen, weil sie in wenigen Sekunden erkennt, dass bei uns etwas
+    liegt, das <strong>ihr eigenes Problem</strong> löst. Der Maßstab für einen gelungenen Tag ist
+    deshalb nicht, wie gut wir dastehen, sondern wie viele echte Gespräche wir führen und wie viele
+    Leute sich danach bei uns melden.</p>
+    <p>Das ist keine Bescheidenheit. Eine Schule, der nach der Veranstaltung fünf Kolleginnen
+    schreiben, hat sich objektiv besser dargestellt als eine mit dem schöneren Rollup.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Die Rechnung</p>
+    <h2>Es geht um zwölf gute Gespräche, nicht um einen Saal</h2>
+    <p>Eine Stunde, zwei gleichzeitig ansprechbare Personen, realistisch fünf Minuten pro Gespräch.
+    Das ergibt im besten Fall rund zwanzig Gespräche, realistisch zehn bis fünfzehn.</p>
+
+    <div class="figures">
+      <div class="fig">
+        <div class="fig-n">2</div>
+        <span class="fig-l">Mittelschulen in ganz Niederösterreich mit Erasmus+. Eine davon sind wir.</span>
+      </div>
+      <div class="fig">
+        <div class="fig-n">120</div>
+        <span class="fig-l">Schülerinnen und Schüler. Alle waren in Italien, nicht nur eine Auswahl.</span>
+      </div>
+      <div class="fig">
+        <div class="fig-n">60</div>
+        <span class="fig-l">Minuten, in denen wir ungefähr zwölf Gespräche führen können.</span>
+      </div>
+    </div>
+
+    <p style="margin-top:20px">Diese Zahl ist keine Ernüchterung, sondern eine Erleichterung. Zwölf
+    Gespräche sind planbar, und sie kalibrieren unseren Aufwand: Für eine Stunde bauen wir kein
+    Großprojekt, sondern fünf Dinge, die sitzen.</p>
+    <p>Sie hat aber zwei Folgen, die wir ernst nehmen müssen. <strong>Erstens:</strong> In fünf
+    Minuten überzeugt man niemanden von einer Praxis, man weckt nur Interesse. Der eigentliche
+    Ertrag ist deshalb die Mail in der Woche danach. <strong>Zweitens:</strong> Wer am Stand wartet,
+    verliert. Wer nicht gerade am Tisch steht, geht zu anderen Ständen, redet dort und bringt Leute
+    mit. Ein persönlich Hergeführter ist mehr wert als zehn zufällig Vorbeigehende.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Unser Thema</p>
+    <h2>Erasmus+ trägt, wenn wir es als Einladung erzählen</h2>
+    <p>Wir haben etwas, das im Raum fast niemand hat: In ganz Niederösterreich sind es zwei
+    Mittelschulen, und im Süden des Landes hat kaum eine Schule das Programm überhaupt beantragt.
+    Diese Seltenheit ist unser Aufhänger. Eine konkrete, überprüfbare Zahl wirkt stärker als jede
+    Formulierung, die wir uns ausdenken könnten.</p>
+    <p>Genau hier liegt aber auch das einzige echte Risiko des Tages, und deshalb steht es hier so
+    deutlich:</p>
+
+    <div class="box">
+      <span class="box-label">Der Punkt, an dem es kippen kann</span>
+      <p>Seltenheit wirkt entweder als <strong>Trophäe</strong> oder als <strong>Einladung</strong>.
+      Wenn unser Stand signalisiert „wir haben etwas, das ihr nicht habt", ist die Reaktion
+      Bewunderung. Und Bewunderung beendet ein Gespräch, sie eröffnet keines. Die Besucherin denkt
+      „schön für die", nickt freundlich und geht weiter. Wir hätten dann einen bestaunten Stand und
+      keine einzige Adresse.</p>
+      <p>Die Lösung liegt im zweiten Teil unserer eigenen Beobachtung: Es scheitert hier fast nie an
+      der Bewerbung. Es scheitert daran, dass kaum jemand antritt, weil das Programm als
+      überfordernd gilt. Das ist eine ermutigende Nachricht, und sie ist wahr.</p>
+    </div>
+
+    <p>Praktisch heißt das: Die Zahl darf nie allein stehen. Sie braucht immer sofort die Frage
+    dahinter, die den Besucher einbezieht statt ihn zum Zuschauer zu machen, sinngemäß <em>nur zwei,
+    und warum eigentlich?</em> Am Wort „gewonnen" würde ich am Stand ebenfalls nicht festhalten, so
+    berechtigt es sich für uns anfühlt: Gewinnen setzt Verlierer voraus, und niemand steht gern vor
+    einem Stand, der ihn dazu macht.</p>
+    <p>Unser Stolz ist vollkommen berechtigt, und er ist die Energie, die uns durch den Tag trägt.
+    Er gehört nur an die richtige Stelle: <strong>in unsere Haltung, nicht in unseren Text.</strong>
+    Stolze Leute, die großzügig weitergeben, sind anziehend. Stolze Texte sind abweisend.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Botschaftsarchitektur</p>
+    <h2>Drei Sätze in dieser Reihenfolge</h2>
+    <p>Die Reihenfolge trägt hier die eigentliche Arbeit. Sie führt vom offenen Angebot über den
+    Beweis zur Verbindlichkeit, und in dieser Richtung fühlt sich der Besucher eingeladen statt
+    abgehängt.</p>
+
+    <div class="step">
+      <div class="step-n">❶</div>
+      <div>
+        <p class="step-h">Die Tür: Das kann fast jede Schule, und fast keine tut es</p>
+        <p>Öffnet bei allen, weil es kein Vorwissen verlangt und niemanden ausschließt. Es räumt
+        die Blockade weg, mit der unsere Besucher ankommen, nämlich das stille „Erasmus ist nichts
+        für uns".</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-n">❷</div>
+      <div>
+        <p class="step-h">Der Beweis: Bei uns waren alle 120 dabei</p>
+        <p>Der Normalfall bei Auslandsfahrten ist Auswahl. Es fahren die Guten, die Motivierten,
+        die, deren Eltern es sich leisten können. Wir haben in zwei Etappen die ganze Schule
+        gebracht. Das ist logistisch die unbequemere Variante und genau deshalb aussagekräftig.</p>
+        <p>Jede Lehrerin hat dazu sofort eine Frage im Kopf: Auch der, der sonst nie mitfährt? Auch
+        die schwierige Gruppe? Auch Familien, bei denen das Geld knapp ist? Damit ist das Gespräch
+        von selbst eröffnet.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-n">❸</div>
+      <div>
+        <p class="step-h">Das Angebot: Wir zeigen euch, wie ihr hineinkommt</p>
+        <p>Wir sind an diesem Tag vermutlich die einzige Stelle im Raum, die diese Frage beantworten
+        kann. Daraus können wir mehr machen als einen Bericht über uns: ein kollegiales Angebot, für
+        andere Schulen ansprechbar zu sein.</p>
+      </div>
+    </div>
+
+    <div class="box quiet" style="margin-top:22px">
+      <span class="box-label">Warum unsere Größe hier ein Vorteil ist</span>
+      <p>Das häufigste stille Urteil eines Messebesuchers lautet „schön für euch, aber bei uns geht
+      das nicht". Große Schulen mit Sonderbudget und Projektstelle lösen es zuverlässig aus. Wir
+      können es gar nicht auslösen: Alles, was eine Schule mit 120 Kindern tatsächlich macht, ist
+      ohne Extrastruktur machbar. Wir müssen das nur aussprechen, statt uns dafür zu entschuldigen.
+      Bei 120 Kindern ist „alle" ein ehrgeiziges Ziel, bei 800 wäre es unmöglich.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Diversität, Inklusion, Chancengleichheit</p>
+    <h2>Wir belegen sie, statt sie zu behaupten</h2>
+    <p>Diese Themen gehören unbedingt in unsere Darstellung, sie sind der inhaltliche Kern dessen,
+    was wir tun. Die Frage ist nur, <strong>wie</strong> sie dort auftreten.</p>
+    <p>Mein Vorschlag: nicht als Wörter auf dem Poster. Nicht weil sie falsch wären, sondern weil
+    jede Lehrperson im Raum sie aus fünfzig Leitbildern und Fortbildungsankündigungen kennt. Sie
+    sind zu Geräusch geworden. „So leben wir Diversität" liest niemand mit echtem Interesse, weil
+    der Satz nichts behauptet, was man überprüfen könnte. Es ist die Sprache, in der wir den Antrag
+    geschrieben haben, und die hatte ihr Publikum bereits: Brüssel. Am Stand steht ein anderes.</p>
+    <p>Die stärkere Bewegung ist die umgekehrte: <strong>Wir nennen die Tatsache und lassen den
+    Besucher den Wert selbst denken.</strong> „Alle 120, auch die, die noch nie weg waren" ist
+    gelebte Chancengleichheit, nur eben bewiesen statt beteuert. Ein selbst gedachter Gedanke hält
+    ungleich besser als ein vorgesetzter.</p>
+    <p>Als Merksatz für die Vorbereitung: <em>Werte behauptet man nicht, man belegt sie.</em> Die
+    Begriffe fallen selbstverständlich im Gespräch, sobald jemand nachfragt, und sie stehen ebenso
+    selbstverständlich in den Unterlagen. Sie sind nur nicht die Eingangstür. Damit erreichen wir
+    unser Ziel besser, nicht schlechter: Die Leute sollen uns als Schule sehen, die
+    Chancengleichheit ernst nimmt, und das leistet der Beweis, nicht das Wort.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Was wir erzählen</p>
+    <h2>Eine Geschichte braucht ein Kind, nicht 120</h2>
+    <p>Damit steht die Frage im Raum, womit wir belegen. Und hier fehlt uns derzeit noch das
+    Wichtigste, deshalb steht dieser Abschnitt bewusst als offene Baustelle da.</p>
+    <p>Denn „alle 120" ist eine Zahl, und Zahlen belegen, aber sie bewegen niemanden. Der Satz hat
+    außerdem keinen Konflikt, und ohne Konflikt gibt es keine Erzählung, sondern nur eine
+    Mitteilung. Der Motor einer Geschichte liegt nicht im Erfolg, sondern im Widerstand: nicht „alle
+    waren dabei", sondern <strong>„bei diesen zwei sah es lange so aus, als ginge es nicht, und das
+    haben wir gemacht"</strong>. Erst dann wird aus Chancengleichheit etwas, das man sich vorstellen
+    kann.</p>
+    <p>Dazu kommt, dass unsere Zahl nur eine der vier Dimensionen trägt, nämlich den Zugang.
+    Diversität, Inklusion und Begabungsförderung hängen bisher daran mit, ohne belegt zu sein.</p>
+
+    <div class="box">
+      <span class="box-label">Vorschlag: Begabungsförderung weglassen</span>
+      <p>Sie passt logisch schlecht zu „alle". Wenn alle fahren, ist das Chancengleichheit.
+      Begabungsförderung heißt normalerweise, jemandem etwas zu geben, das nicht alle bekommen.
+      Beides nebeneinander zu stellen, schwächt beides. Für eine Stunde Messebetrieb sind vier Werte
+      ohnehin zu viele: Zwei, die sitzen, wirken stärker als vier, die im Antrag stehen.</p>
+    </div>
+
+    <h3>Vier Hürden, vier mögliche Geschichten</h3>
+    <p>Die Begriffe sind keine vier Botschaften, sondern vier Hürdentypen, die wir überwunden haben.
+    Das ist die Frageliste fürs Kollegium, und aus den Antworten entsteht der erzählbare Teil.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Hürde</th><th>Die Frage, die wir uns stellen</th><th>Belegt</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Geld</td>
+            <td>Welche Familie hätte das nicht zahlen können, und wie haben wir es gelöst, ohne dass das Kind es gemerkt hat?</td>
+            <td>Chancengleichheit</td>
+          </tr>
+          <tr>
+            <td>Können</td>
+            <td>Gab es Kinder mit SPF, mit einer Beeinträchtigung, mit Medikamenten, mit Angst vorm Fliegen oder vorm Weggehen? Was haben wir organisiert, damit es trotzdem ging?</td>
+            <td>Inklusion</td>
+          </tr>
+          <tr>
+            <td>Sprache und Herkunft</td>
+            <td>Wie ist es Kindern gegangen, die zuhause nicht Deutsch sprechen? Und gab es Kinder mit eigener Migrationserfahrung, für die „ins Ausland fahren" etwas anderes bedeutet als für die übrigen?</td>
+            <td>Diversität</td>
+          </tr>
+          <tr>
+            <td>Zutrauen</td>
+            <td>Welche Eltern wollten zuerst nicht, und was hat sie umgestimmt?</td>
+            <td>Chancengleichheit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Erfahrungsgemäß ist die letzte die härteste Hürde von allen und zugleich die, über die andere
+    Schulen am wenigsten Auskunft bekommen. Genau deshalb hört man uns dort besonders genau zu.</p>
+
+    <h3>Wo die Geschichte im Gespräch sitzt</h3>
+    <p>Wir erzählen <strong>eine</strong> Geschichte, nicht vier, und sie dauert zwanzig bis dreißig
+    Sekunden. Mehr geht nicht, wir haben fünf Minuten für alles. Ihr Platz ist genau die Stelle im
+    Neunzig-Sekunden-Kern, an der bisher „was zuerst nicht funktioniert hat" steht. Damit fallen der
+    ehrliche und der bewegende Teil zusammen, und wir brauchen für beides nur einen Atemzug.</p>
+    <p>Der Gegenbesuch im Oktober ist dafür vermutlich die bessere Bühne als unsere Hinfahrt. Fahren
+    kann man buchen. Wenn italienische Kinder bei uns untergebracht werden, findet Diversität nicht
+    als Ausflug statt, sondern im Wohnzimmer. Das ist das stärkere Bild, und es ist eines, das kein
+    anderer Stand hat.</p>
+
+    <div class="box quiet">
+      <span class="box-label">Die Grenze, die wir vorher ziehen</span>
+      <p>Wir erzählen von einzelnen Kindern vor fremden Lehrpersonen. Bei 120 Kindern in einer
+      kleinen Gemeinde ist „das Mädchen aus der dritten Klasse im Rollstuhl" identifizierbar, auch
+      ohne Namen. Wir brauchen deshalb Fassungen, die das Prinzip erzählen, ohne das Kind erkennbar
+      zu machen, und bei allem, was nah geht, die Zustimmung der Familie. Für Fotos gilt das
+      erst recht.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Der Stand</p>
+    <h2>Drei Zonen, die verschiedene Aufgaben haben</h2>
+    <p>Der Aufbau folgt der Entfernung des Besuchers. Jede Zone hat genau eine Aufgabe, und keine
+    übernimmt die Aufgabe der nächsten.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Zone</th><th>Aufgabe</th><th>Regel</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Drei Meter<br><span style="font-weight:normal;color:var(--ink-soft);font-size:13.5px">Rollup, großes Poster</span></td>
+            <td>Anziehen. Kein Informationsträger, sondern ein Magnet.</td>
+            <td>Aus drei Metern lesbar, Schlagzeile unter sieben Wörtern, oben statt mittig.</td>
+          </tr>
+          <tr>
+            <td>Ein Meter<br><span style="font-weight:normal;color:var(--ink-soft);font-size:13.5px">Der Tisch</span></td>
+            <td>Öffnen. Ein Gegenstand, den man in die Hand nehmen kann.</td>
+            <td>Echtes, benutztes Material aus dem Projekt, keine Fotocollage. Gebrauchsspuren sind ein Qualitätsmerkmal.</td>
+          </tr>
+          <tr>
+            <td>Gespräch<br><span style="font-weight:normal;color:var(--ink-soft);font-size:13.5px">Wer schon steht</span></td>
+            <td>Vertiefen und übergeben.</td>
+            <td>Zweites A3 mit dem Wie, Mitnehmblatt, Kontaktliste.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Der Gegenstand auf dem Tisch ist unser Ersatz für den fehlenden Beamer und ehrlich gesagt
+    besser als einer. Er zieht die Hand an, und wo die Hand hingeht, geht der Körper hin. Er beweist
+    ohne Behauptung, dass wir das wirklich tun. Und er erzeugt die erste Frage von selbst, sodass
+    niemand von uns jemanden ansprechen muss. Was genau es wird, entscheiden wir gemeinsam.</p>
+
+    <h3>Was wir sagen: ein Kern von neunzig Sekunden</h3>
+    <p>Kein Vortrag. Bei freiem Publikumsverkehr kommen die Leute versetzt, eine Ansprache zur
+    Minute fünf verpufft. Stattdessen ein kurzer Kern, den jede und jeder von uns beliebig oft
+    sprechen kann: das Problem, das alle kennen. Was wir konkret getan haben. Was es uns gebracht
+    hat. Was zuerst nicht funktioniert hat. Und dann die Übergabe mit einer Gegenfrage: „Wie läuft
+    das bei euch?"</p>
+    <p>Der vierte Teil ist der wichtigste. Ein Stand, der nur die Sonnenseite zeigt, bestätigt genau
+    das Vorurteil „bei denen ging es halt, bei uns nicht". Ein Satz darüber, wo wir uns verrannt
+    haben, macht die Sache erst glaubwürdig und nachmachbar. Unter Kolleginnen ist Glaubwürdigkeit
+    die knappe Währung, nicht Perfektion.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Wer was tut</p>
+    <h2>Rollen statt alle hinter dem Tisch</h2>
+    <p>Drei bis fünf Personen an einem kleinen Stand kippen leicht in eine geschlossene Gruppe, und
+    an einer geschlossenen Gruppe geht man vorbei. Deshalb teilen wir vorher auf.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Rolle</th><th>Aufgabe</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ansprache</td><td>Steht <strong>vor</strong> dem Tisch, nicht dahinter. Der Tisch ist sonst eine Theke, und eine Theke ist eine Grenze. Spricht den Kern.</td></tr>
+          <tr><td>Vertiefung</td><td>Übernimmt, wer länger bleibt. Kennt die Zahlen, den Ablauf und die Stellen, an denen es geklemmt hat.</td></tr>
+          <tr><td>Rückkanal</td><td>Kontaktliste, Mitnehmblätter, behält den Überblick, wer noch wartet.</td></tr>
+          <tr><td>Unterwegs</td><td>Geht zu anderen Ständen, knüpft dort an und bringt Leute mit. Bei nur einer Stunde verdoppelt das unsere Reichweite.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Dazu ein Handgriff, der viel entscheidet: In den ersten dreißig Sekunden klären, ob wir mit
+    einer Klassenlehrerin oder mit einer Schulleitung sprechen. Die beiden bringen verschiedene
+    Fragen mit. Die Lehrerin will wissen, wie das praktisch war, mit Dreizehnjährigen eine Woche im
+    Ausland, wie viel Arbeit das zusätzlich bedeutet und was es mit der Klasse gemacht hat. Die
+    Schulleitung will wissen, was es kostet, was die EU zahlt, wie man hineinkommt, wie es sich mit
+    Aufsicht und Abrechnung verhält und wie man eine Partnerschule findet. Zwei Spuren, ein Stand.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Zum Mitnehmen</p>
+    <h2>Der Flyer, aber ein brauchbarer</h2>
+    <p>Dass die Leute mit etwas weggehen müssen, ist richtig. Ein Stand ohne Mitnehmbares hat keine
+    Wirkung über den Tag hinaus, und das wäre zu wenig für den Aufwand, den wir betreiben.</p>
+    <p>Nur wird ein klassischer Imageflyer gefaltet, eingesteckt und am Abend weggeworfen. Das ist
+    keine Geschmacksfrage, das ist schlicht, was mit Papier passiert, das keinen Gebrauchswert hat.
+    Die Lösung ist deshalb nicht „kein Flyer", sondern <strong>ein nützliches Ein-Blatt statt eines
+    Imageblatts</strong>: der Weg zum eigenen Erasmus, in Schritten, mit den Stolpersteinen. Das
+    Blatt, das jemand am Montag seiner Direktorin auf den Tisch legen kann.</p>
+    <p>Unser Logo und die Kontaktdaten stehen klein in der Fußzeile, nicht groß oben. So ein Blatt
+    wird aufgehoben, weil es Arbeit spart, und es landet im Postfach der Kollegin, die nicht
+    mitgefahren ist. Wir tragen unseren Namen also weiter, ohne über uns zu reden. Das ist der
+    Imageflyer, der tatsächlich funktioniert.</p>
+
+    <div class="box quiet">
+      <span class="box-label">Drei Handhabungsregeln</span>
+      <ul>
+        <li>Lieber sechzig gute Blätter als dreihundert beliebige.</li>
+        <li>Nicht stapelweise auflegen, sondern bewusst überreichen: „Möchten Sie das mitnehmen? Da
+        steht drin, wie wir das gemacht haben." Ein überreichtes Blatt wird viel seltener
+        weggeworfen als ein genommenes.</li>
+        <li>Unten ein QR-Code auf eine schlichte Seite mit allen Unterlagen zum Download. Das ist
+        unser Ersatz für den Beamer: Die Tiefe liegt online, der Besucher benutzt sein eigenes
+        Handy, und Strom brauchen wir dafür keinen.</li>
+      </ul>
+    </div>
+
+    <h3>Die Liste, die fast alle Stände vergessen</h3>
+    <p>Eine schlichte Liste auf dem Tisch: „Wir schicken Ihnen die Unterlagen", Name und
+    Mailadresse. Das verschiebt den Ertrag vom hektischen Messetag auf die ruhige Mail danach und
+    entlastet uns enorm, weil wir vor Ort niemanden überzeugen müssen. Wir müssen nur Interesse
+    einsammeln. Und wir haben danach ein Ergebnis in der Hand statt eines Gefühls.</p>
+    <p>Unser Angebot, andere Schulen ein Stück weit zu begleiten, ist dabei der natürlichste
+    denkbare Grund, die Adresse dazulassen. Wir sollten vorher nur intern festlegen, wie viel wir
+    wirklich zusagen wollen, damit daraus im November keine Last wird. Lieber etwas Kleines, das wir
+    sicher halten, als eine große Geste, die verhungert.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Zielbild</p>
+    <h2>Woran wir am Abend erkennen, dass es gelungen ist</h2>
+    <p>Ein klares, bescheidenes Erfolgskriterium nimmt der Vorbereitung den diffusen Druck. Bei
+    unklaren Zielen hat man immer das Gefühl, es falsch zu machen, und genau daher kommt die
+    Unsicherheit im Kollegium.</p>
+    <ul>
+      <li>Wir haben rund zwölf echte Gespräche geführt, keine Begrüßungen.</li>
+      <li>Wir nehmen eine Handvoll Adressen von Leuten mit, die die Unterlagen wollen.</li>
+      <li>Mindestens eine Schule meldet sich in den zwei Wochen danach.</li>
+    </ul>
+    <p>Das größere Ziel dahinter, und es ist realistisch: Wir verlassen die Veranstaltung nicht als
+    eine von vierzig ausstellenden Schulen, sondern als <strong>die Adresse in der Region für dieses
+    Thema</strong>. Das ist mehr als eine gute Darstellung, das ist eine Rolle. Und sie ist genau
+    deshalb zu haben, weil im Süden Niederösterreichs sonst niemand sie besetzt.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Nächste Schritte</p>
+    <h2>Was wir jetzt klären müssen</h2>
+    <p>Die Punkte sind nach Dringlichkeit geordnet. Die ersten drei blockieren die weitere
+    Planung.</p>
+
+    <ul class="todo">
+      <li><span class="bx">□</span><span><b>Termin, Budget und wer mitfährt</b><span class="note">Davon hängt ab, ob der Gegenbesuch aus Italien im Oktober schon stattgefunden hat. Falls ja, haben wir frisches Material und die stärkere Hälfte der Geschichte, denn Gastgeber sein ist schwerer als fahren, und darüber redet sonst niemand. Rollup und Druck brauchen außerdem Vorlauf.</span></span></li>
+      <li><span class="bx">□</span><span><b>Die vier Hürdenfragen im Kollegium durchgehen</b><span class="note">Geld, Können, Sprache und Herkunft, Zutrauen: je eine Runde, wer sich an einen konkreten Fall erinnert. Das ist der dringendste Punkt, denn ohne diese Antworten bleibt unser Thema eine Zahl. Am besten mit allen, die mitgefahren sind, und im selben Zug festhalten, was wir davon öffentlich erzählen dürfen.</span></span></li>
+      <li><span class="bx">□</span><span><b>Entscheiden, welche zwei Werte wir tragen</b><span class="note">Mein Vorschlag sind Chancengleichheit und Inklusion, weil wir sie mit „alle 120" und den Einzelfällen belegen können. Begabungsförderung würde ich weglassen. Diese Entscheidung sollte die Schulleitung treffen, bevor wir an Poster und Sprechtext gehen.</span></span></li>
+      <li><span class="bx">□</span><span><b>Sind wir akkreditiert oder läuft es über Einzelprojekte?</b><span class="note">Für Schulleitungen ist das die entscheidende Information: Die Akkreditierung macht den großen Antrag einmalig, danach kommen die Mittel jährlich ohne neues Projektverfahren. Genau das wissen die meisten Schulen nicht, und genau das entkräftet das „zu überfordernd" am wirksamsten.</span></span></li>
+      <li><span class="bx">□</span><span><b>Die Zahl belegen lassen</b><span class="note">Wenn „zwei Mittelschulen in Niederösterreich" auf das Poster kommt, muss sie stimmen, falls doch jemand mit einer dritten auftaucht. Beim OeAD als Nationalagentur bestätigen lassen und ein Stichdatum dazuschreiben.</span></span></li>
+      <li><span class="bx">□</span><span><b>Wie wir die Partnerschule gefunden haben</b><span class="note">Wenn wir sie nach inhaltlicher Passung zu unseren Schwerpunkten ausgesucht haben und nicht danach, wer zufällig verfügbar war, ist das eine übertragbare Lehre. Partnersuche ist nach dem Antrag die zweitgrößte Hürde, und danach wird uns jeder fragen.</span></span></li>
+      <li><span class="bx">□</span><span><b>Der Gegenstand für den Tisch</b><span class="note">Echtes Material aus dem Projekt, kein Schaustück. Sammeln wir gemeinsam, sobald die Punkte oben geklärt sind.</span></span></li>
+    </ul>
+
+    <p style="margin-top:22px">Sobald Termin und Punkt zwei stehen, arbeite ich daraus die konkrete
+    Fassung aus: Schlagzeile und Postertext, den Neunzig-Sekunden-Kern zum Auswendiglernen, das
+    Mitnehmblatt und einen Zeitplan bis zur Fahrt.</p>
+  </section>
+
+  <footer>Mittelschule Hirtenberg · Konzeptvorschlag Ideen-Börse · Seite 1 von 1</footer>
+
+</div>
