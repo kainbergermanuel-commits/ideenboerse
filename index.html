@@ -82,7 +82,7 @@
   html { scroll-behavior: smooth; }
   .toc {
     position: sticky;
-    top: 0;
+    top: 12px;
     z-index: 20;
     margin-inline: -8px;
     background: rgba(255, 253, 251, .93);
@@ -90,6 +90,7 @@
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--hairline);
     border-radius: 12px;
+    box-shadow: 0 6px 20px -12px rgba(28, 42, 43, .3);
   }
   .toc summary {
     display: flex;
@@ -142,7 +143,7 @@
   .toc-list a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
   .toc-list a.here { background: var(--fill-accent); color: var(--accent); font-weight: bold; }
   .toc-list a.here i { color: var(--accent); }
-  section { scroll-margin-top: 62px; }
+  section { scroll-margin-top: 76px; }
 
   @media (max-width: 560px) {
     .toc-list { grid-template-columns: 1fr; }
@@ -422,7 +423,7 @@
   </div>
 
   <h1>Was wir an der Ideen-Börse zeigen, und wie</h1>
-  <p class="standfirst">Ein Vorschlag, wie wir aus einer Stunde Messebetrieb, zwei Tischen und einer
+  <p class="standfirst">Ein Vorschlag, wie wir aus einer Stunde Messebetrieb, ein bis zwei Tischen und einer
   Stehwand das Beste herausholen. Mit Erasmus+ als Thema und einer klaren Rolle für alle, die
   mitfahren.</p>
   </div>
@@ -506,7 +507,7 @@
       <figcaption>Erasmus+ ist keine Reise, sondern eine Verbindung in beide Richtungen. Genau das unterscheidet ein Programm von einem Ausflug.</figcaption>
     </figure>
 
-    <p>Genau hier liegt aber auch das einzige echte Risiko des Tages, und deshalb steht es hier so
+    <p>Genau hier liegt aber auch das größte Risiko unserer Darstellung, und deshalb steht es hier so
     deutlich:</p>
 
     <div class="box">
@@ -674,7 +675,7 @@
       </table>
     </div>
 
-    <p>Erfahrungsgemäß ist die letzte die härteste Hürde von allen und zugleich die, über die andere
+    <p>Die letzte dürfte die härteste Hürde von allen sein und zugleich die, über die andere
     Schulen am wenigsten Auskunft bekommen. Genau deshalb hört man uns dort besonders genau zu.</p>
 
     <h3>Wo die Geschichte im Gespräch sitzt</h3>
@@ -728,7 +729,7 @@
           <tr>
             <td>Gespräch<br><span style="font-weight:normal;color:var(--ink-soft);font-size:13.5px">Wer schon steht</span></td>
             <td>Vertiefen und übergeben.</td>
-            <td>Zweites A3 mit dem Wie, Mitnehmblatt, Kontaktliste.</td>
+            <td>Zweites A3 mit dem Wie, Chip und Blatt übergeben, Kontakt notieren.</td>
           </tr>
         </tbody>
       </table>
@@ -771,7 +772,7 @@
         <tbody>
           <tr><td>Ansprache</td><td>Steht <strong>vor</strong> dem Tisch, nicht dahinter. Der Tisch ist sonst eine Theke, und eine Theke ist eine Grenze. Spricht den Kern.</td></tr>
           <tr><td>Vertiefung</td><td>Übernimmt, wer länger bleibt. Kennt die Zahlen, den Ablauf und die Stellen, an denen es geklemmt hat.</td></tr>
-          <tr><td>Rückkanal</td><td>Kontaktliste, Mitnehmblätter, behält den Überblick, wer noch wartet.</td></tr>
+          <tr><td>Rückkanal</td><td>Kontaktliste, Chips und Blätter, behält den Überblick, wer noch wartet.</td></tr>
           <tr><td>Unterwegs</td><td>Geht zu anderen Ständen, knüpft dort an und bringt Leute mit. Bei nur einer Stunde verdoppelt das unsere Reichweite.</td></tr>
         </tbody>
       </table>
@@ -779,9 +780,12 @@
 
     <figure class="fig-dia">
       <div class="diawrap"><svg class="dia" viewBox="0 0 680 256" role="img" aria-label="Zeitleiste über 60 Minuten mit vier Rollen: Ansprache und Vertiefung führen zusammen rund dreizehn Gespräche, der Rückkanal läuft durchgehend, und die Rolle Unterwegs verlässt den Stand dreimal und bringt jemanden mit."><defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#C9722B"/></marker></defs><rect x="116" y="34" width="548" height="34" rx="7" fill="#F3F8F7"/><text x="106" y="55" text-anchor="end" font-size="11.5" font-weight="bold" fill="#0E7F78">Ansprache</text><rect x="116" y="80" width="548" height="34" rx="7" fill="#F3F8F7"/><text x="106" y="101" text-anchor="end" font-size="11.5" font-weight="bold" fill="#15A89D">Vertiefung</text><rect x="116" y="126" width="548" height="34" rx="7" fill="#F3F8F7"/><text x="106" y="147" text-anchor="end" font-size="11.5" font-weight="bold" fill="#7FBFB7">Rückkanal</text><rect x="116" y="172" width="548" height="34" rx="7" fill="#F3F8F7"/><text x="106" y="193" text-anchor="end" font-size="11.5" font-weight="bold" fill="#C9722B">Unterwegs</text><rect x="125.133" y="40" width="36.5333" height="22" rx="5" fill="#0E7F78"/><rect x="170.8" y="40" width="27.4" height="22" rx="5" fill="#0E7F78"/><rect x="216.467" y="40" width="45.6667" height="22" rx="5" fill="#0E7F78"/><rect x="280.4" y="40" width="36.5333" height="22" rx="5" fill="#0E7F78"/><rect x="335.2" y="40" width="54.8" height="22" rx="5" fill="#0E7F78"/><rect x="408.267" y="40" width="27.4" height="22" rx="5" fill="#0E7F78"/><rect x="453.933" y="40" width="45.6667" height="22" rx="5" fill="#0E7F78"/><rect x="527" y="40" width="36.5333" height="22" rx="5" fill="#0E7F78"/><rect x="581.8" y="40" width="54.8" height="22" rx="5" fill="#0E7F78"/><rect x="189.067" y="86" width="63.9333" height="22" rx="5" fill="#15A89D"/><rect x="307.8" y="86" width="82.2" height="22" rx="5" fill="#15A89D"/><rect x="426.533" y="86" width="73.0667" height="22" rx="5" fill="#15A89D"/><rect x="554.4" y="86" width="63.9333" height="22" rx="5" fill="#15A89D"/><rect x="119" y="138" width="542" height="10" rx="5" fill="#7FBFB7"/><circle cx="179.933" cy="143" r="4.5" fill="#FFFDFB" stroke="#0E7F78" stroke-width="1.4"/><circle cx="262.133" cy="143" r="4.5" fill="#FFFDFB" stroke="#0E7F78" stroke-width="1.4"/><circle cx="362.6" cy="143" r="4.5" fill="#FFFDFB" stroke="#0E7F78" stroke-width="1.4"/><circle cx="472.2" cy="143" r="4.5" fill="#FFFDFB" stroke="#0E7F78" stroke-width="1.4"/><circle cx="572.667" cy="143" r="4.5" fill="#FFFDFB" stroke="#0E7F78" stroke-width="1.4"/><circle cx="636.6" cy="143" r="4.5" fill="#FFFDFB" stroke="#0E7F78" stroke-width="1.4"/><rect x="143.4" y="178" width="91.3333" height="22" rx="5" fill="none" stroke="#C9722B" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="234.733" y1="189" x2="250.733" y2="189" stroke="#C9722B" stroke-width="1.5" marker-end="url(#ar3)"/><rect x="298.667" y="178" width="109.6" height="22" rx="5" fill="none" stroke="#C9722B" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="408.267" y1="189" x2="424.267" y2="189" stroke="#C9722B" stroke-width="1.5" marker-end="url(#ar3)"/><rect x="481.333" y="178" width="127.867" height="22" rx="5" fill="none" stroke="#C9722B" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="609.2" y1="189" x2="625.2" y2="189" stroke="#C9722B" stroke-width="1.5" marker-end="url(#ar3)"/><text x="613.2" y="193" font-size="10" fill="#C9722B">bringt jemanden mit</text><line x1="116" y1="220" x2="664" y2="220" stroke="#C9CDC6" stroke-width="1"/><line x1="116" y1="220" x2="116" y2="225" stroke="#C9CDC6" stroke-width="1"/><text x="116" y="238" text-anchor="middle" font-size="10" fill="#566466">0</text><line x1="207.333" y1="220" x2="207.333" y2="225" stroke="#C9CDC6" stroke-width="1"/><text x="207.333" y="238" text-anchor="middle" font-size="10" fill="#566466">10</text><line x1="298.667" y1="220" x2="298.667" y2="225" stroke="#C9CDC6" stroke-width="1"/><text x="298.667" y="238" text-anchor="middle" font-size="10" fill="#566466">20</text><line x1="390" y1="220" x2="390" y2="225" stroke="#C9CDC6" stroke-width="1"/><text x="390" y="238" text-anchor="middle" font-size="10" fill="#566466">30</text><line x1="481.333" y1="220" x2="481.333" y2="225" stroke="#C9CDC6" stroke-width="1"/><text x="481.333" y="238" text-anchor="middle" font-size="10" fill="#566466">40</text><line x1="572.667" y1="220" x2="572.667" y2="225" stroke="#C9CDC6" stroke-width="1"/><text x="572.667" y="238" text-anchor="middle" font-size="10" fill="#566466">50</text><line x1="664" y1="220" x2="664" y2="225" stroke="#C9CDC6" stroke-width="1"/><text x="664" y="238" text-anchor="middle" font-size="10" fill="#566466">60</text></svg></div>
-      <figcaption>Eine mögliche Stunde. Ansprache und Vertiefung tragen zusammen dreizehn Gespräche, der Rückkanal läuft nebenher, und die gestrichelte Spur zeigt, warum niemand am Stand warten sollte.</figcaption>
+      <figcaption>Eine mögliche Stunde. Ansprache und Vertiefung tragen zusammen gut ein Dutzend Gespräche, der Rückkanal läuft nebenher, und die gestrichelte Spur zeigt, warum niemand am Stand warten sollte.</figcaption>
     </figure>
 
+    <p>Wenn wir nur zu dritt sind, gehen Rückkanal und Unterwegs zusammen: Dieselbe Person
+    kümmert sich um Liste und Chips und geht in ruhigen Minuten los. Was nicht geht, ist die
+    Ansprache unbesetzt zu lassen.</p>
     <p>Dazu ein Handgriff, der viel entscheidet: In den ersten dreißig Sekunden klären, ob wir mit
     einer Klassenlehrerin oder mit einer Schulleitung sprechen. Die beiden bringen verschiedene
     Fragen mit. Die Lehrerin will wissen, wie das praktisch war, mit Dreizehnjährigen eine Woche im
@@ -808,8 +812,9 @@
     drei Gründen überlegen: Metall wirft niemand weg, weil es sich wertig anfühlt und Gewicht hat.
     Es landet am Schlüsselbund oder auf dem Schreibtisch statt im Altpapier, bleibt also monatelang
     sichtbar. Und der Inhalt dahinter kann wachsen, ohne dass wir etwas nachdrucken müssen.</p>
-    <p>Gleichzeitig ist der Chip das haptische Objekt, das wir ohnehin brauchen: Etwas, das man in
-    die Hand nimmt, öffnet ein Gespräch von selbst.</p>
+    <p>Nicht zu verwechseln ist der Chip mit dem Gegenstand auf dem Tisch. Der Chip geht mit,
+    das Ausstellungsstück bleibt da. Beide arbeiten mit derselben Kraft, nämlich dass etwas in der
+    Hand ein Gespräch von selbst eröffnet, aber sie ersetzen einander nicht.</p>
 
     <div class="box warn">
       <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.2 2.8 19.8h18.4z"/><path d="M12 10v3.6"/><path d="M12 16.9h.01"/></svg><span>Der eine Punkt, den wir nicht vergeigen dürfen</span></span>
@@ -845,8 +850,8 @@
         gleich" dauert zehn Sekunden und verdoppelt die Trefferquote.</li>
         <li><strong>Bewusst überreichen statt auflegen.</strong> Ein Chip, den man in die Hand
         gelegt bekommt, wird behalten. Einer, den man von einem Haufen nimmt, nicht.</li>
-        <li><strong>200 Stück sind mehr, als wir an dem Tag brauchen.</strong> Bei rund zwölf
-        Gesprächen gehen vielleicht dreißig weg. Das ist kein Fehler, Blech verdirbt nicht: Der Rest
+        <li><strong>200 Stück sind mehr, als wir an dem Tag brauchen.</strong> Aus rund zwölf
+        Gesprächen und den kurzen Kontakten drumherum werden vielleicht dreißig Chips. Das ist kein Fehler, Blech verdirbt nicht: Der Rest
         geht an Elternabende, ins eigene Kollegium und an die nächste Veranstaltung.</li>
       </ul>
     </div>
@@ -889,7 +894,7 @@
       <li>Mindestens eine Schule meldet sich in den zwei Wochen danach.</li>
     </ul>
     <p>Das größere Ziel dahinter, und es ist realistisch: Wir verlassen die Veranstaltung nicht als
-    eine von vierzig ausstellenden Schulen, sondern als <strong>die Adresse in der Region für dieses
+    eine von vielen ausstellenden Schulen, sondern als <strong>die Adresse in der Region für dieses
     Thema</strong>. Das ist mehr als eine gute Darstellung, das ist eine Rolle. Und sie ist genau
     deshalb zu haben, weil im Süden Niederösterreichs sonst niemand sie besetzt.</p>
   </section>
@@ -913,11 +918,11 @@
     </ul>
 
     <p style="margin-top:22px">Sobald Termin und Punkt zwei stehen, arbeite ich daraus die konkrete
-    Fassung aus: Schlagzeile und Postertext, den Neunzig-Sekunden-Kern zum Auswendiglernen, das
-    Mitnehmblatt und einen Zeitplan bis zur Fahrt.</p>
+    Fassung aus: Schlagzeile und Postertext, den Neunzig-Sekunden-Kern zum Auswendiglernen, die
+    Beschriftung des Chips, das Schritt-für-Schritt-Blatt und einen Zeitplan bis zur Messe.</p>
   </section>
 
-  <footer>Mittelschule Hirtenberg · Konzeptvorschlag Ideen-Börse · Seite 1 von 1</footer>
+  <footer>Mittelschule Hirtenberg · Konzeptvorschlag Ideen-Börse · Stand 16.09.2026</footer>
 
 </div>
 
