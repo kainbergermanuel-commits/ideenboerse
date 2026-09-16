@@ -39,7 +39,7 @@ Parallel dazu läuft die Chip-Produktion: 200 Blech-Chips mit eingelasertem QR-C
 digitalen Mappe führt. Blockiert durch die dauerhafte Adresse hinter dem Code, siehe Checkliste.
 
 Sobald das geklärt ist, folgen Schlagzeile und Postertext, der Neunzig-Sekunden-Kern zum
-Auswendiglernen, das Mitnehmblatt und ein Zeitplan.
+Auswendiglernen, die Beschriftung des Chips, das Schritt-für-Schritt-Blatt und ein Zeitplan.
 
 ## Gestaltung
 
