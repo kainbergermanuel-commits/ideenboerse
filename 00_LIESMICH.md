@@ -25,13 +25,16 @@ GitHub Pages die Seite ohne Umweg ausliefert.
 
 ## Stand der Dinge
 
-Das Konzept steht, die Ausarbeitung wartet auf sieben Entscheidungen. Sie sind im letzten Abschnitt
+Das Konzept steht, die Ausarbeitung wartet auf neun Entscheidungen. Sie sind im letzten Abschnitt
 des Dokuments als Checkliste aufgeführt; die ersten drei blockieren alles Weitere:
 
 1. Termin, Budget und wer mitfährt
 2. Die vier Hürdenfragen im Kollegium durchgehen (Geld, Können, Sprache und Herkunft, Zutrauen).
    Ohne konkrete Einzelfälle bleibt unser Thema eine Zahl.
 3. Entscheiden, welche zwei Werte wir tragen
+
+Parallel dazu läuft die Chip-Produktion: 200 Blech-Chips mit eingelasertem QR-Code, der zu einer
+digitalen Mappe führt. Blockiert durch die dauerhafte Adresse hinter dem Code, siehe Checkliste.
 
 Sobald das geklärt ist, folgen Schlagzeile und Postertext, der Neunzig-Sekunden-Kern zum
 Auswendiglernen, das Mitnehmblatt und ein Zeitplan.
