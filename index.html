@@ -78,6 +78,56 @@
     margin: 14px 0 0;
   }
 
+
+  /* Navigation */
+  html { scroll-behavior: smooth; }
+  .toc {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    margin-inline: -20px;
+    padding: 10px 0;
+    background: rgba(255, 253, 251, .86);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .toc-track {
+    display: flex;
+    gap: 7px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-inline: 20px;
+    scroll-padding-inline: 20px;
+  }
+  .toc-track::-webkit-scrollbar { display: none; }
+  .toc a {
+    flex: none;
+    font-size: 12.5px;
+    font-weight: bold;
+    letter-spacing: .02em;
+    text-decoration: none;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    padding: 6px 13px;
+    transition: color .18s, border-color .18s, background .18s;
+  }
+  .toc a:hover { color: var(--accent); border-color: #BFE2DB; }
+  .toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .toc a.here {
+    color: #FFFFFF;
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 100%);
+  }
+  section { scroll-margin-top: 66px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .toc a { transition: none; }
+  }
+
   /* Karten */
   section {
     background: var(--paper);
@@ -87,7 +137,9 @@
     box-shadow: var(--card-shadow);
   }
   .eyebrow {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: .13em;
@@ -183,14 +235,18 @@
     border-color: #F2DAC2;
   }
   .box-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: .13em;
     text-transform: uppercase;
     color: var(--accent);
-    display: block;
     margin-bottom: 9px;
   }
+  .ic { width: 14px; height: 14px; flex: none; }
+  .box-label .ic { width: 15px; height: 15px; }
   .box.warn .box-label { color: var(--warm); }
   .box p { max-width: 60ch; }
 
@@ -304,8 +360,24 @@
   mitfahren.</p>
   </div>
 
-  <section>
-    <p class="eyebrow">Ausgangslage</p>
+  <nav class="toc" aria-label="Abschnitte">
+    <div class="toc-track">
+      <a href="#ausgangslage">Ausgangslage</a>
+      <a href="#rechnung">Die Rechnung</a>
+      <a href="#thema">Unser Thema</a>
+      <a href="#botschaft">Botschaft</a>
+      <a href="#werte">Werte</a>
+      <a href="#geschichte">Geschichte</a>
+      <a href="#stand">Der Stand</a>
+      <a href="#rollen">Rollen</a>
+      <a href="#mitnehmen">Mitnehmen</a>
+      <a href="#zielbild">Zielbild</a>
+      <a href="#schritte">Nächste Schritte</a>
+    </div>
+  </nav>
+
+  <section id="ausgangslage">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11z"/></svg><span>Ausgangslage</span></p>
     <h2>Wir präsentieren nicht uns, wir geben etwas her</h2>
     <p>Der Rahmen ist eng: eine Stunde, freier Publikumsverkehr, kein Strom, kein Beamer, wenig
     Platz, viele Schulen gleichzeitig. Eine Präsentation im klassischen Sinn ist darin nicht
@@ -319,8 +391,8 @@
     schreiben, hat sich objektiv besser dargestellt als eine mit dem schöneren Rollup.</p>
   </section>
 
-  <section>
-    <p class="eyebrow">Die Rechnung</p>
+  <section id="rechnung">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg><span>Die Rechnung</span></p>
     <h2>Es geht um zwölf gute Gespräche, nicht um einen Saal</h2>
     <p>Eine Stunde, zwei gleichzeitig ansprechbare Personen, realistisch fünf Minuten pro Gespräch.
     Das ergibt im besten Fall rund zwanzig Gespräche, realistisch zehn bis fünfzehn.</p>
@@ -350,8 +422,8 @@
     mit. Ein persönlich Hergeführter ist mehr wert als zehn zufällig Vorbeigehende.</p>
   </section>
 
-  <section>
-    <p class="eyebrow">Unser Thema</p>
+  <section id="thema">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85z"/></svg><span>Unser Thema</span></p>
     <h2>Erasmus+ trägt, wenn wir es als Einladung erzählen</h2>
     <p>Wir haben etwas, das im Raum fast niemand hat: In ganz Niederösterreich sind es zwei
     Mittelschulen, und im Süden des Landes hat kaum eine Schule das Programm überhaupt beantragt.
@@ -361,7 +433,7 @@
     deutlich:</p>
 
     <div class="box">
-      <span class="box-label">Der Punkt, an dem es kippen kann</span>
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.2 2.8 19.8h18.4z"/><path d="M12 10v3.6"/><path d="M12 16.9h.01"/></svg><span>Der Punkt, an dem es kippen kann</span></span>
       <p>Seltenheit wirkt entweder als <strong>Trophäe</strong> oder als <strong>Einladung</strong>.
       Wenn unser Stand signalisiert „wir haben etwas, das ihr nicht habt", ist die Reaktion
       Bewunderung. Und Bewunderung beendet ein Gespräch, sie eröffnet keines. Die Besucherin denkt
@@ -382,8 +454,8 @@
     Stolze Leute, die großzügig weitergeben, sind anziehend. Stolze Texte sind abweisend.</p>
   </section>
 
-  <section>
-    <p class="eyebrow">Botschaftsarchitektur</p>
+  <section id="botschaft">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3.2V6.5A2.5 2.5 0 0 1 7.5 4h10A2.5 2.5 0 0 1 20 6.5z"/></svg><span>Botschaftsarchitektur</span></p>
     <h2>Drei Sätze in dieser Reihenfolge</h2>
     <p>Die Reihenfolge trägt hier die eigentliche Arbeit. Sie führt vom offenen Angebot über den
     Beweis zur Verbindlichkeit, und in dieser Richtung fühlt sich der Besucher eingeladen statt
@@ -423,7 +495,7 @@
     </div>
 
     <div class="box quiet" style="margin-top:22px">
-      <span class="box-label">Warum unsere Größe hier ein Vorteil ist</span>
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.4a5.6 5.6 0 1 1 5.6 0v1.4H9.2z"/><path d="M10 21.2h4"/></svg><span>Warum unsere Größe hier ein Vorteil ist</span></span>
       <p>Das häufigste stille Urteil eines Messebesuchers lautet „schön für euch, aber bei uns geht
       das nicht". Große Schulen mit Sonderbudget und Projektstelle lösen es zuverlässig aus. Wir
       können es gar nicht auslösen: Alles, was eine Schule mit 120 Kindern tatsächlich macht, ist
@@ -432,8 +504,8 @@
     </div>
   </section>
 
-  <section>
-    <p class="eyebrow">Diversität, Inklusion, Chancengleichheit</p>
+  <section id="werte">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.5" r="2.8"/><path d="M3.8 19a5.2 5.2 0 0 1 10.4 0"/><path d="M16.2 6.2a2.8 2.8 0 0 1 0 4.6"/><path d="M17.4 14.6A5.2 5.2 0 0 1 20.2 19"/></svg><span>Diversität, Inklusion, Chancengleichheit</span></p>
     <h2>Wir belegen sie, statt sie zu behaupten</h2>
     <p>Diese Themen gehören unbedingt in unsere Darstellung, sie sind der inhaltliche Kern dessen,
     was wir tun. Die Frage ist nur, <strong>wie</strong> sie dort auftreten.</p>
@@ -453,8 +525,8 @@
     Chancengleichheit ernst nimmt, und das leistet der Beweis, nicht das Wort.</p>
   </section>
 
-  <section>
-    <p class="eyebrow">Was wir erzählen</p>
+  <section id="geschichte">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.8 5.2h5.4A2.8 2.8 0 0 1 12 8v11a2.4 2.4 0 0 0-2.4-1.9H3.8z"/><path d="M20.2 5.2h-5.4A2.8 2.8 0 0 0 12 8v11a2.4 2.4 0 0 1 2.4-1.9h5.8z"/></svg><span>Was wir erzählen</span></p>
     <h2>Eine Geschichte braucht ein Kind, nicht 120</h2>
     <p>Damit steht die Frage im Raum, womit wir belegen. Und hier fehlt uns derzeit noch das
     Wichtigste, deshalb steht dieser Abschnitt bewusst als offene Baustelle da.</p>
@@ -468,7 +540,7 @@
     Diversität, Inklusion und Begabungsförderung hängen bisher daran mit, ohne belegt zu sein.</p>
 
     <div class="box">
-      <span class="box-label">Vorschlag: Begabungsförderung weglassen</span>
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.4a5.6 5.6 0 1 1 5.6 0v1.4H9.2z"/><path d="M10 21.2h4"/></svg><span>Vorschlag: Begabungsförderung weglassen</span></span>
       <p>Sie passt logisch schlecht zu „alle". Wenn alle fahren, ist das Chancengleichheit.
       Begabungsförderung heißt normalerweise, jemandem etwas zu geben, das nicht alle bekommen.
       Beides nebeneinander zu stellen, schwächt beides. Für eine Stunde Messebetrieb sind vier Werte
@@ -523,7 +595,7 @@
     anderer Stand hat.</p>
 
     <div class="box warn">
-      <span class="box-label">Die Grenze, die wir vorher ziehen</span>
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6.1v5.3c0 4.3 3 8.2 7.4 9.4 4.4-1.2 7.4-5.1 7.4-9.4V6.1z"/><path d="m9.3 12.1 1.9 1.9 3.5-3.7"/></svg><span>Die Grenze, die wir vorher ziehen</span></span>
       <p>Wir erzählen von einzelnen Kindern vor fremden Lehrpersonen. Bei 120 Kindern in einer
       kleinen Gemeinde ist „das Mädchen aus der dritten Klasse im Rollstuhl" identifizierbar, auch
       ohne Namen. Wir brauchen deshalb Fassungen, die das Prinzip erzählen, ohne das Kind erkennbar
@@ -532,8 +604,8 @@
     </div>
   </section>
 
-  <section>
-    <p class="eyebrow">Der Stand</p>
+  <section id="stand">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.6" y="4.2" width="16.8" height="10.6" rx="1.6"/><path d="M12 14.8V20"/><path d="M8.4 20h7.2"/></svg><span>Der Stand</span></p>
     <h2>Drei Zonen, die verschiedene Aufgaben haben</h2>
     <p>Der Aufbau folgt der Entfernung des Besuchers. Jede Zone hat genau eine Aufgabe, und keine
     übernimmt die Aufgabe der nächsten.</p>
@@ -580,8 +652,8 @@
     die knappe Währung, nicht Perfektion.</p>
   </section>
 
-  <section>
-    <p class="eyebrow">Wer was tut</p>
+  <section id="rollen">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="8.2" r="3"/><path d="M4.2 19a5.8 5.8 0 0 1 11.6 0"/><path d="m16.6 12.4 1.7 1.7 3.2-3.4"/></svg><span>Wer was tut</span></p>
     <h2>Rollen statt alle hinter dem Tisch</h2>
     <p>Drei bis fünf Personen an einem kleinen Stand kippen leicht in eine geschlossene Gruppe, und
     an einer geschlossenen Gruppe geht man vorbei. Deshalb teilen wir vorher auf.</p>
@@ -608,8 +680,8 @@
     Aufsicht und Abrechnung verhält und wie man eine Partnerschule findet. Zwei Spuren, ein Stand.</p>
   </section>
 
-  <section>
-    <p class="eyebrow">Zum Mitnehmen</p>
+  <section id="mitnehmen">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.6 3.4H7.2A1.8 1.8 0 0 0 5.4 5.2v13.6a1.8 1.8 0 0 0 1.8 1.8h9.6a1.8 1.8 0 0 0 1.8-1.8V8.2z"/><path d="M13.6 3.4v4.8h5.2"/><path d="M8.8 13h6.4M8.8 16.4h4.2"/></svg><span>Zum Mitnehmen</span></p>
     <h2>Der Flyer, aber ein brauchbarer</h2>
     <p>Dass die Leute mit etwas weggehen müssen, ist richtig. Ein Stand ohne Mitnehmbares hat keine
     Wirkung über den Tag hinaus, und das wäre zu wenig für den Aufwand, den wir betreiben.</p>
@@ -624,7 +696,7 @@
     Imageflyer, der tatsächlich funktioniert.</p>
 
     <div class="box quiet">
-      <span class="box-label">Drei Handhabungsregeln</span>
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.4 7h2M4.4 12h2M4.4 17h2"/><path d="M9.6 7h10M9.6 12h10M9.6 17h10"/></svg><span>Drei Handhabungsregeln</span></span>
       <ul>
         <li>Lieber sechzig gute Blätter als dreihundert beliebige.</li>
         <li>Nicht stapelweise auflegen, sondern bewusst überreichen: „Möchten Sie das mitnehmen? Da
@@ -647,8 +719,8 @@
     sicher halten, als eine große Geste, die verhungert.</p>
   </section>
 
-  <section>
-    <p class="eyebrow">Zielbild</p>
+  <section id="zielbild">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1"/></svg><span>Zielbild</span></p>
     <h2>Woran wir am Abend erkennen, dass es gelungen ist</h2>
     <p>Ein klares, bescheidenes Erfolgskriterium nimmt der Vorbereitung den diffusen Druck. Bei
     unklaren Zielen hat man immer das Gefühl, es falsch zu machen, und genau daher kommt die
@@ -664,8 +736,8 @@
     deshalb zu haben, weil im Süden Niederösterreichs sonst niemand sie besetzt.</p>
   </section>
 
-  <section>
-    <p class="eyebrow">Nächste Schritte</p>
+  <section id="schritte">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 7.2 5.6 8.6l2.6-2.8"/><path d="M4.2 13.4 5.6 14.8l2.6-2.8"/><path d="M4.6 19.6h3.4"/><path d="M11.6 7.4h8M11.6 13.6h8M11.6 19.6h8"/></svg><span>Nächste Schritte</span></p>
     <h2>Was wir jetzt klären müssen</h2>
     <p>Die Punkte sind nach Dringlichkeit geordnet. Die ersten drei blockieren die weitere
     Planung.</p>
@@ -688,3 +760,24 @@
   <footer>Mittelschule Hirtenberg · Konzeptvorschlag Ideen-Börse · Seite 1 von 1</footer>
 
 </div>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var current = null;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var a = map[e.target.id];
+        if (!a || a === current) return;
+        if (current) current.classList.remove('here');
+        a.classList.add('here');
+        current = a;
+        a.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      });
+    }, { rootMargin: '-64px 0px -62% 0px' });
+    document.querySelectorAll('section[id]').forEach(function (s) { obs.observe(s); });
+  })();
+</script>
