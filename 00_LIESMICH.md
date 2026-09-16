@@ -38,7 +38,14 @@ Auswendiglernen, das Mitnehmblatt und ein Zeitplan.
 
 ## Gestaltung
 
-`index.html` folgt der Hausschrift aus dem Skill `schuldokument-design`: Petrol `0E7F78`,
-Trebuchet MS, Schrittziffern ❶ ❷ ❸, Kästchen `□`, keine Geviertstriche. Für die Dunkelansicht am
-Bildschirm ist der Petrol-Ton aufgehellt (`63C1B7`), weil er auf dunklem Grund sonst nicht lesbar
-ist. Im Druck und in der Hellansicht gilt unverändert `0E7F78`.
+`index.html` ist als Webseite gestaltet, nicht als Druckstück: heller Verlaufsgrund, weiße Karten,
+abgerundete Ecken. Die Hausschrift aus dem Skill `schuldokument-design` bleibt die Grundlage
+(Petrol `0E7F78`, Trebuchet MS, Schrittziffern ❶ ❷ ❸, Kästchen `□`, keine Geviertstriche), ergänzt um
+zwei bewusste Abweichungen für den Bildschirm:
+
+- Verläufe und Karten statt flächiger Kästen, dazu ein tiefes Petrol `0A5B56` und ein helles
+  `15A89D` für die Verläufe.
+- Ein warmer Zweitton `C9722B` auf `FDEEDF`, ausschließlich für den Datenschutzhinweis. Er ist das
+  einzige Signal, das sich farblich vom übrigen Dokument abhebt.
+
+Die Seite ist bewusst nur hell. Für ein gedrucktes Schulstück gilt weiterhin die reine Hausschrift.
