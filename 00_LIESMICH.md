@@ -19,6 +19,8 @@ Zielgruppe sind Lehrpersonen und Schulleitungen, vereinzelt Studierende. Thema i
 | Datei | Inhalt |
 |---|---|
 | `index.html` | Das Konzeptpapier für die Schulleitung. Im Browser öffnen oder als PDF drucken. |
+| `bild-prompts.md` | Prompts für Bild-KI und für beschriftete Infografiken. |
+| `img/` | Die Bilder der Seite als JPEG. Die PNG-Originale bleiben lokal und sind von Git ausgenommen. |
 
 Der Ordner ist zugleich das Repo `kainbergermanuel-commits/ideenboerse`. `index.html` heißt so, damit
 GitHub Pages die Seite ohne Umweg ausliefert.

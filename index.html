@@ -84,47 +84,72 @@
     position: sticky;
     top: 0;
     z-index: 20;
-    margin-inline: -20px;
-    padding: 10px 0;
-    background: rgba(255, 253, 251, .86);
+    margin-inline: -8px;
+    background: rgba(255, 253, 251, .93);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--hairline);
-  }
-  .toc-track {
-    display: flex;
-    gap: 7px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding-inline: 20px;
-    scroll-padding-inline: 20px;
-  }
-  .toc-track::-webkit-scrollbar { display: none; }
-  .toc a {
-    flex: none;
-    font-size: 12.5px;
-    font-weight: bold;
-    letter-spacing: .02em;
-    text-decoration: none;
-    color: var(--ink-soft);
-    background: var(--paper);
     border: 1px solid var(--hairline);
-    border-radius: 999px;
-    padding: 6px 13px;
-    transition: color .18s, border-color .18s, background .18s;
+    border-radius: 12px;
   }
-  .toc a:hover { color: var(--accent); border-color: #BFE2DB; }
-  .toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .toc a.here {
-    color: #FFFFFF;
-    border-color: transparent;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 100%);
+  .toc summary {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 16px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
   }
-  section { scroll-margin-top: 66px; }
+  .toc summary::-webkit-details-marker { display: none; }
+  .toc summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 12px; }
+  .toc-kicker {
+    font-size: 10.5px;
+    font-weight: bold;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--label);
+  }
+  .toc-now { font-size: 14.5px; font-weight: bold; color: var(--accent); flex: 1; }
+  .toc-chev { width: 17px; height: 17px; color: var(--label); transition: transform .2s; }
+  .toc[open] .toc-chev { transform: rotate(180deg); }
+  .toc-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 10px;
+    padding: 4px 12px 14px;
+    border-top: 1px solid var(--hairline);
+    margin-top: 2px;
+  }
+  .toc-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 7px 9px;
+    border-radius: 8px;
+  }
+  .toc-list a i {
+    font-style: normal;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--label);
+    font-variant-numeric: tabular-nums;
+    min-width: 14px;
+  }
+  .toc-list a:hover { background: var(--fill-quiet); color: var(--accent); }
+  .toc-list a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .toc-list a.here { background: var(--fill-accent); color: var(--accent); font-weight: bold; }
+  .toc-list a.here i { color: var(--accent); }
+  section { scroll-margin-top: 62px; }
 
+  @media (max-width: 560px) {
+    .toc-list { grid-template-columns: 1fr; }
+  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .toc a { transition: none; }
+    .toc-chev { transition: none; }
   }
 
   /* Karten */
@@ -247,6 +272,22 @@
   .ic { width: 14px; height: 14px; flex: none; }
   .box-label .ic { width: 15px; height: 15px; }
   .box.warn .box-label { color: var(--warm); }
+
+  /* Bilder */
+  .fig-img { margin: 26px 0; }
+  .fig-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid var(--hairline);
+  }
+  .fig-img figcaption {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
 
   /* Grafiken */
   .fig-dia { margin: 26px 0; }
@@ -386,21 +427,26 @@
   mitfahren.</p>
   </div>
 
-  <nav class="toc" aria-label="Abschnitte">
-    <div class="toc-track">
-      <a href="#ausgangslage">Ausgangslage</a>
-      <a href="#rechnung">Die Rechnung</a>
-      <a href="#thema">Unser Thema</a>
-      <a href="#botschaft">Botschaft</a>
-      <a href="#werte">Werte</a>
-      <a href="#geschichte">Geschichte</a>
-      <a href="#stand">Der Stand</a>
-      <a href="#rollen">Rollen</a>
-      <a href="#mitnehmen">Mitnehmen</a>
-      <a href="#zielbild">Zielbild</a>
-      <a href="#schritte">Nächste Schritte</a>
+  <details class="toc" id="toc">
+    <summary>
+      <span class="toc-kicker">Abschnitt</span>
+      <span class="toc-now">Ausgangslage</span>
+      <svg class="toc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="toc-list">
+      <a href="#ausgangslage"><i>1</i>Ausgangslage</a>
+      <a href="#rechnung"><i>2</i>Die Rechnung</a>
+      <a href="#thema"><i>3</i>Unser Thema</a>
+      <a href="#botschaft"><i>4</i>Botschaftsarchitektur</a>
+      <a href="#werte"><i>5</i>Werte belegen</a>
+      <a href="#geschichte"><i>6</i>Was wir erzählen</a>
+      <a href="#stand"><i>7</i>Der Stand</a>
+      <a href="#rollen"><i>8</i>Wer was tut</a>
+      <a href="#mitnehmen"><i>9</i>Zum Mitnehmen</a>
+      <a href="#zielbild"><i>10</i>Zielbild</a>
+      <a href="#schritte"><i>11</i>Nächste Schritte</a>
     </div>
-  </nav>
+  </details>
 
   <section id="ausgangslage">
     <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11z"/></svg><span>Ausgangslage</span></p>
@@ -455,6 +501,11 @@
     Mittelschulen, und im Süden des Landes hat kaum eine Schule das Programm überhaupt beantragt.
     Diese Seltenheit ist unser Aufhänger. Eine konkrete, überprüfbare Zahl wirkt stärker als jede
     Formulierung, die wir uns ausdenken könnten.</p>
+    <figure class="fig-img">
+      <img src="img/bruecke.jpg" alt="Illustration: zwei Schulhäuser an gegenüberliegenden Seiten eines Tals, verbunden durch eine schmale Brücke, auf der Figuren in beide Richtungen gehen." loading="lazy" width="1400" height="788">
+      <figcaption>Erasmus+ ist keine Reise, sondern eine Verbindung in beide Richtungen. Genau das unterscheidet ein Programm von einem Ausflug.</figcaption>
+    </figure>
+
     <p>Genau hier liegt aber auch das einzige echte Risiko des Tages, und deshalb steht es hier so
     deutlich:</p>
 
@@ -549,6 +600,11 @@
     Besucher den Wert selbst denken.</strong> „Alle 120, auch die, die noch nie weg waren" ist
     gelebte Chancengleichheit, nur eben bewiesen statt beteuert. Ein selbst gedachter Gedanke hält
     ungleich besser als ein vorgesetzter.</p>
+    <figure class="fig-img">
+      <img src="img/kinder-alle.jpg" alt="Illustration: eine lange Reihe von Schulkindern unterschiedlichen Aussehens geht gemeinsam einen Hügel hinauf zu einem Bus, darunter ein Kind im Rollstuhl. Niemand bleibt zurück." loading="lazy" width="1400" height="788">
+      <figcaption>Das Bild sagt ohne ein einziges Wort, was „alle 120" bedeutet. Wer genau hinsieht, findet in der Reihe auch die Kinder, bei denen es nicht selbstverständlich war.</figcaption>
+    </figure>
+
     <p>Als Merksatz für die Vorbereitung: <em>Werte behauptet man nicht, man belegt sie.</em> Die
     Begriffe fallen selbstverständlich im Gespräch, sobald jemand nachfragt, und sie stehen ebenso
     selbstverständlich in den Unterlagen. Sie sind nur nicht die Eingangstür. Damit erreichen wir
@@ -621,6 +677,11 @@
     Sekunden. Mehr geht nicht, wir haben fünf Minuten für alles. Ihr Platz ist genau die Stelle im
     Neunzig-Sekunden-Kern, an der bisher „was zuerst nicht funktioniert hat" steht. Damit fallen der
     ehrliche und der bewegende Teil zusammen, und wir brauchen für beides nur einen Atemzug.</p>
+    <figure class="fig-img">
+      <img src="img/gastgeber-tuer.jpg" alt="Illustration: eine weit geöffnete Haustür am Abend, warmes Licht fällt auf die Straße, zwei Kinder mit Rucksäcken werden hereingebeten." loading="lazy" width="1400" height="788">
+      <figcaption>Gastgeber sein ist der Teil, über den andere Schulen nicht reden. Hier wird Diversität nicht besucht, sie findet im Wohnzimmer statt.</figcaption>
+    </figure>
+
     <p>Der Gegenbesuch im Oktober ist dafür vermutlich die bessere Bühne als unsere Hinfahrt. Fahren
     kann man buchen. Wenn italienische Kinder bei uns untergebracht werden, findet Diversität nicht
     als Ausflug statt, sondern im Wohnzimmer. Das ist das stärkere Bild, und es ist eines, das kein
@@ -732,6 +793,11 @@
     <p>Ein klassischer Imageflyer leistet das aber nicht. Er wird gefaltet, eingesteckt und am Abend
     weggeworfen. Das ist keine Geschmacksfrage, das ist schlicht, was mit Papier passiert, das keinen
     Gebrauchswert hat.</p>
+    <figure class="fig-img">
+      <img src="img/chip.jpg" alt="Foto: ein kleiner runder Metallanhänger mit blanker Oberfläche liegt neben einem Schlüsselbund auf einem alten Holztisch im Fensterlicht." loading="lazy" width="1400" height="788">
+      <figcaption>So sieht der Chip aus, wenn die Messe längst vorbei ist: am Schlüsselbund, auf dem Schreibtisch, nicht im Altpapier.</figcaption>
+    </figure>
+
     <p>Unsere Lösung sind <strong>200 Blech-Chips mit eingelasertem QR-Code</strong>, die zu einer
     digitalen Mappe mit Unterlagen, Checklisten und Erfolgsgeschichten führen. Das ist dem Flyer aus
     drei Gründen überlegen: Metall wirft niemand weg, weil es sich wertig anfühlt und Gewicht hat.
@@ -847,9 +913,14 @@
 
 <script>
   (function () {
-    var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+    var box = document.getElementById('toc');
+    var now = box.querySelector('.toc-now');
+    var links = Array.prototype.slice.call(box.querySelectorAll('.toc-list a'));
     var map = {};
-    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    links.forEach(function (a) {
+      map[a.getAttribute('href').slice(1)] = a;
+      a.addEventListener('click', function () { box.open = false; });
+    });
     var current = null;
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -859,9 +930,9 @@
         if (current) current.classList.remove('here');
         a.classList.add('here');
         current = a;
-        a.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        now.textContent = a.textContent.replace(/^\d+/, '').trim();
       });
-    }, { rootMargin: '-64px 0px -62% 0px' });
-    document.querySelectorAll('section[id]').forEach(function (s) { obs.observe(s); });
+    }, { rootMargin: '-60px 0px -62% 0px' });
+    document.querySelectorAll('section[id]').forEach(function (sec) { obs.observe(sec); });
   })();
 </script>
