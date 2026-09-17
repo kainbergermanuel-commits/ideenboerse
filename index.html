@@ -332,41 +332,44 @@
   }
 
   /* Namensvorschläge */
-  .names { display: grid; gap: 12px; margin: 22px 0; }
+  .names { display: grid; gap: 10px; margin: 22px 0; }
   .name {
-    display: grid;
-    gap: 10px;
-    padding: 18px 20px;
+    padding: 16px 18px;
     border: 1px solid var(--hairline);
     border-radius: 14px;
-    background: linear-gradient(150deg, #F8FCFB 0%, #FFFFFF 70%);
+    background: var(--paper);
   }
-  .name.pick { border-color: #9FCFC7; background: linear-gradient(150deg, var(--fill-accent) 0%, #F5FBFA 70%); }
+  .name.pick {
+    border-color: #9FCFC7;
+    background: linear-gradient(150deg, var(--fill-accent) 0%, #F6FBFA 70%);
+  }
   .name-t {
-    font-size: 18.5px;
+    font-size: 17.5px;
     font-weight: bold;
     color: var(--accent-deep);
     letter-spacing: -.01em;
+    margin-bottom: 5px;
   }
   .name.pick .name-t::after {
     content: "Empfehlung";
-    margin-left: 10px;
-    font-size: 10px;
+    margin-left: 9px;
+    font-size: 9.5px;
+    font-weight: bold;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--accent);
-    vertical-align: middle;
+    vertical-align: 2px;
   }
-  .name-p, .name-c { font-size: 14.5px; line-height: 1.5; }
-  .name-p b, .name-c b {
-    font-size: 10.5px;
-    margin-bottom: 1px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--label);
-    display: block;
+  .name-p { font-size: 14.5px; line-height: 1.55; margin: 0; }
+  .name-c {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 7px 0 0;
+    padding-top: 7px;
+    border-top: 1px solid var(--hairline);
   }
-  .name-c { color: var(--ink-soft); }
+  .name-c b { color: var(--label); font-weight: bold; }
 
   /* Zeitplan */
   .plan { display: grid; gap: 10px; margin: 22px 0; }
@@ -863,38 +866,38 @@
     <div class="names">
       <div class="name pick">
         <div class="name-t">Weit kommen mit wenig</div>
-        <div class="name-p"><b>Was er kann</b>Beantwortet genau die Frage, mit der unser Publikum ankommt, nämlich ob das ohne Budget und Projektstelle geht. Der Name ist eine Antwort, kein Titel, und er klingt nach Handwerk statt nach Programm. Funktioniert auch als Satz im Gespräch: „Bei uns heißt das Weit kommen mit wenig."</div>
-        <div class="name-c"><b>Zu bedenken</b>Nennt Italien und Europa nicht. Braucht einen erklärenden Halbsatz daneben.</div>
+        <p class="name-p">Beantwortet genau die Frage, mit der unser Publikum ankommt, nämlich ob das ohne Budget und Projektstelle geht. Der Name ist eine Antwort, kein Titel, und er klingt nach Handwerk statt nach Programm. Funktioniert auch als Satz im Gespräch: „Bei uns heißt das Weit kommen mit wenig."</p>
+        <p class="name-c"><b>Zu bedenken:</b> Nennt Italien und Europa nicht. Braucht einen erklärenden Halbsatz daneben.</p>
       </div>
       <div class="name">
         <div class="name-t">Wir haben Platz</div>
-        <div class="name-p"><b>Was er kann</b>Der wärmste und der einzige, der dreifach trägt: Platz im Bus, Platz im Turnsaal, Platz für jedes Kind. Klingt nach Haltung ohne ein einziges Wertwort, und er würde später auch über einem Tag der offenen Tür stehen können.</div>
-        <div class="name-c"><b>Zu bedenken</b>Sehr leise. Ohne die Schlagzeile daneben versteht ihn niemand sofort.</div>
+        <p class="name-p">Der wärmste und der einzige, der dreifach trägt: Platz im Bus, Platz im Turnsaal, Platz für jedes Kind. Klingt nach Haltung ohne ein einziges Wertwort, und er würde später auch über einem Tag der offenen Tür stehen können.</p>
+        <p class="name-c"><b>Zu bedenken:</b> Sehr leise. Ohne die Schlagzeile daneben versteht ihn niemand sofort.</p>
       </div>
       <div class="name">
         <div class="name-t">Niemand bleibt daheim</div>
-        <div class="name-p"><b>Was er kann</b>Die klarste Fassung von „alle". Man versteht sie in einer Sekunde, und sie erzeugt sofort die Rückfrage nach den Kindern, bei denen es schwierig war.</div>
-        <div class="name-c"><b>Zu bedenken</b>Negativ gebaut. Als Poster stark, als Dauername etwas schwer.</div>
+        <p class="name-p">Die klarste Fassung von „alle". Man versteht sie in einer Sekunde, und sie erzeugt sofort die Rückfrage nach den Kindern, bei denen es schwierig war.</p>
+        <p class="name-c"><b>Zu bedenken:</b> Negativ gebaut. Als Poster stark, als Dauername etwas schwer.</p>
       </div>
       <div class="name">
         <div class="name-t">Zwei Busse, eine Schule</div>
-        <div class="name-p"><b>Was er kann</b>Erzählt unsere Logistik in vier Worten und macht die zwei Etappen zur Pointe statt zur Fußnote. Sehr konkret, sehr österreichisch, kein Marketingklang.</div>
-        <div class="name-c"><b>Zu bedenken</b>Bindet uns an die Zahl zwei, die sich in einem anderen Jahr ändern kann.</div>
+        <p class="name-p">Erzählt unsere Logistik in vier Worten und macht die zwei Etappen zur Pointe statt zur Fußnote. Sehr konkret, sehr österreichisch, kein Marketingklang.</p>
+        <p class="name-c"><b>Zu bedenken:</b> Bindet uns an die Zahl zwei, die sich in einem anderen Jahr ändern kann.</p>
       </div>
       <div class="name">
         <div class="name-t">Mitfahrgelegenheit</div>
-        <div class="name-p"><b>Was er kann</b>Ein Wort, und ein doppelbödiges: Erasmus+ als Mitfahrgelegenheit für Kinder, die sonst nicht mitgefahren wären. Charmant, unprätentiös, bleibt hängen.</div>
-        <div class="name-c"><b>Zu bedenken</b>Verspielt. Wer an dem Tag nur Anträge und Zahlen hören will, nimmt ihn vielleicht nicht ernst.</div>
+        <p class="name-p">Ein Wort, und ein doppelbödiges: Erasmus+ als Mitfahrgelegenheit für Kinder, die sonst nicht mitgefahren wären. Charmant, unprätentiös, bleibt hängen.</p>
+        <p class="name-c"><b>Zu bedenken:</b> Verspielt. Wer an dem Tag nur Anträge und Zahlen hören will, nimmt ihn vielleicht nicht ernst.</p>
       </div>
       <div class="name">
         <div class="name-t">Feldbetten und Fernweh</div>
-        <div class="name-p"><b>Was er kann</b>Erzählt beide Richtungen auf einmal, das Hinfahren und das Empfangen. Der klangvollste der sieben und ein sehr guter Titel für die digitale Mappe.</div>
-        <div class="name-c"><b>Zu bedenken</b>Erklärt sich erst, wenn jemand die Geschichte vom Turnsaal kennt.</div>
+        <p class="name-p">Erzählt beide Richtungen auf einmal, das Hinfahren und das Empfangen. Der klangvollste der sieben und ein sehr guter Titel für die digitale Mappe.</p>
+        <p class="name-c"><b>Zu bedenken:</b> Erklärt sich erst, wenn jemand die Geschichte vom Turnsaal kennt.</p>
       </div>
       <div class="name">
         <div class="name-t">Kein Auswahlverfahren</div>
-        <div class="name-p"><b>Was er kann</b>Die schärfste Variante und exakt unser Leitgedanke. Provoziert die Rückfrage „wie meint ihr das?", und genau die wollen wir.</div>
-        <div class="name-c"><b>Zu bedenken</b>Als Dauername sperrig. Stark als Untertitel unter einem der anderen.</div>
+        <p class="name-p">Die schärfste Variante und exakt unser Leitgedanke. Provoziert die Rückfrage „wie meint ihr das?", und genau die wollen wir.</p>
+        <p class="name-c"><b>Zu bedenken:</b> Als Dauername sperrig. Stark als Untertitel unter einem der anderen.</p>
       </div>
     </div>
     <p>Meine Empfehlung ist <strong>Weit kommen mit wenig</strong>, weil unser Publikum an dem Tag
