@@ -59,6 +59,14 @@ the street, two travelling children with backpacks arriving and being welcomed i
 outside at a respectful distance. Cosy, everyday, small-town Austria.
 ```
 
+### 3b · Feldbetten im Turnsaal
+
+Ersetzt das Haustür-Motiv, seit klar ist, dass die italienischen Kinder im Turnsaal schlafen.
+
+```
+An illustration of a school gymnasium in the evening, with two neat rows of simple folding camp beds set up along the floor, backpacks beside them, a basketball hoop and wall bars in the background, warm low light through high windows. Two adults are still unfolding one last bed. Nobody is asleep yet, the room is being prepared. Style: clean editorial vector illustration, flat shapes with subtle paper-grain texture, limited palette of deep teal #0A5B56, teal #0E7F78, bright teal #15A89D, warm apricot #C9722B, soft mint #DFF2EE on warm off-white #FFFDFB. Generous negative space, calm and warm, no text, no letters, no numbers, no logos, no watermarks. Wide 16:9 composition.
+```
+
 ### 4 · Die Brücke zwischen zwei Schulen
 
 Übergreifendes Motiv, gut fürs Rollup.

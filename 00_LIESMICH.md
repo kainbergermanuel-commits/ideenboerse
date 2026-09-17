@@ -27,19 +27,19 @@ GitHub Pages die Seite ohne Umweg ausliefert.
 
 ## Stand der Dinge
 
-Das Konzept steht, die Ausarbeitung wartet auf neun Entscheidungen. Sie sind im letzten Abschnitt
-des Dokuments als Checkliste aufgeführt; die ersten drei blockieren alles Weitere:
+**Messetag ist in knapp zwei Wochen.** Der Fahrplan steht im vorletzten Abschnitt des Dokuments,
+die inhaltlich offenen Punkte im letzten. Die drei eiligsten:
 
-1. Termin, Budget und wer mitfährt
+1. Die dauerhafte Adresse hinter dem QR-Code festlegen, danach Chips bestellen
 2. Die vier Hürdenfragen im Kollegium durchgehen (Geld, Können, Sprache und Herkunft, Zutrauen).
    Ohne konkrete Einzelfälle bleibt unser Thema eine Zahl.
-3. Entscheiden, welche zwei Werte wir tragen
+3. Schulleitung: welche zwei Werte wir tragen, plus Freigabe des Leitgedankens
 
-Parallel dazu läuft die Chip-Produktion: 200 Blech-Chips mit eingelasertem QR-Code, der zu einer
-digitalen Mappe führt. Blockiert durch die dauerhafte Adresse hinter dem Code, siehe Checkliste.
+Leitgedanke: *Für die meisten Schulen ist Erasmus+ eine Belohnung. Bei uns ist es ein Ausgleich.*
 
-Sobald das geklärt ist, folgen Schlagzeile und Postertext, der Neunzig-Sekunden-Kern zum
-Auswendiglernen, die Beschriftung des Chips, das Schritt-für-Schritt-Blatt und ein Zeitplan.
+Noch zu bauen: Gesprächsleitfaden fürs Kollegium, Postertext, Sprechzettel, Kontaktliste,
+Schritt-für-Schritt-Blatt und die digitale Mappe hinter dem QR-Code. Geplant ist, dass die Mappe
+die öffentliche Startseite wird und dieses Konzept auf eine Unterseite zieht.
 
 ## Gestaltung
 

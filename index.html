@@ -313,6 +313,91 @@
     line-height: 1.5;
   }
 
+  /* Leitgedanke */
+  .box.lead {
+    background: linear-gradient(145deg, #0A5B56 0%, #0E7F78 55%, #15A89D 100%);
+    border: none;
+    padding: 24px 26px;
+  }
+  .box.lead .box-label { color: rgba(255, 255, 255, .8); }
+  .box.lead p { color: rgba(255, 255, 255, .93); }
+  .lead-claim {
+    font-size: clamp(19px, 3.2vw, 24px);
+    font-weight: bold;
+    line-height: 1.34;
+    letter-spacing: -.01em;
+    color: #FFFFFF !important;
+    margin-bottom: 14px !important;
+    text-wrap: balance;
+  }
+
+  /* Namensvorschläge */
+  .names { display: grid; gap: 12px; margin: 22px 0; }
+  .name {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 14px;
+    padding: 18px 20px;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    background: linear-gradient(150deg, #F8FCFB 0%, #FFFFFF 70%);
+  }
+  .name.pick { border-color: #9FCFC7; background: linear-gradient(150deg, var(--fill-accent) 0%, #F5FBFA 70%); }
+  .name-t {
+    grid-column: 1 / -1;
+    font-size: 18.5px;
+    font-weight: bold;
+    color: var(--accent-deep);
+    letter-spacing: -.01em;
+  }
+  .name.pick .name-t::after {
+    content: "Empfehlung";
+    margin-left: 10px;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    vertical-align: middle;
+  }
+  .name-p, .name-c { font-size: 14.5px; line-height: 1.5; }
+  .name-p b, .name-c b {
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--label);
+    display: block;
+  }
+  .name-c { color: var(--ink-soft); }
+
+  /* Zeitplan */
+  .plan { display: grid; gap: 10px; margin: 22px 0; }
+  .plan-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 4px 18px;
+    padding: 16px 18px;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    background: var(--paper);
+  }
+  .plan-row.now { border-color: #E8C9A8; background: linear-gradient(150deg, var(--warm-fill) 0%, #FFFBF7 70%); }
+  .plan-when {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 3px;
+  }
+  .plan-row.now .plan-when { color: var(--warm); }
+  .plan-row ul { margin: 0; }
+  .plan-row li { font-size: 14.5px; margin-bottom: 5px; }
+  .plan-row li:last-child { margin-bottom: 0; }
+
+  @media (max-width: 560px) {
+    .plan-row { grid-template-columns: 1fr; }
+  }
+
   /* Schrittfolge */
   .step {
     display: grid;
@@ -419,7 +504,7 @@
   <div class="hero">
   <div class="meta">
     <span>Mittelschule Hirtenberg · Ideen-Börse PH Niederösterreich</span>
-    <span>Konzeptvorschlag · 16.09.2026</span>
+    <span>Konzeptvorschlag · Messetag in knapp zwei Wochen</span>
   </div>
 
   <h1>Was wir an der Ideen-Börse zeigen, und wie</h1>
@@ -436,16 +521,18 @@
     </summary>
     <div class="toc-list">
       <a href="#ausgangslage"><i>1</i>Ausgangslage</a>
-      <a href="#rechnung"><i>2</i>Die Rechnung</a>
-      <a href="#thema"><i>3</i>Unser Thema</a>
+      <a href="#thema"><i>2</i>Unser Thema</a>
+      <a href="#rechnung"><i>3</i>Die Rechnung</a>
       <a href="#botschaft"><i>4</i>Botschaftsarchitektur</a>
       <a href="#werte"><i>5</i>Werte belegen</a>
       <a href="#geschichte"><i>6</i>Was wir erzählen</a>
-      <a href="#stand"><i>7</i>Der Stand</a>
-      <a href="#rollen"><i>8</i>Wer was tut</a>
-      <a href="#mitnehmen"><i>9</i>Zum Mitnehmen</a>
-      <a href="#zielbild"><i>10</i>Zielbild</a>
-      <a href="#schritte"><i>11</i>Nächste Schritte</a>
+      <a href="#name"><i>7</i>Wie wir es nennen</a>
+      <a href="#stand"><i>8</i>Der Stand</a>
+      <a href="#rollen"><i>9</i>Wer was tut</a>
+      <a href="#mitnehmen"><i>10</i>Zum Mitnehmen</a>
+      <a href="#zielbild"><i>11</i>Zielbild</a>
+      <a href="#fahrplan"><i>12</i>Fahrplan</a>
+      <a href="#schritte"><i>13</i>Offene Punkte</a>
     </div>
   </details>
 
@@ -462,37 +549,6 @@
     Leute sich danach bei uns melden.</p>
     <p>Das ist keine Bescheidenheit. Eine Schule, der nach der Veranstaltung fünf Kolleginnen
     schreiben, hat sich objektiv besser dargestellt als eine mit dem schöneren Rollup.</p>
-  </section>
-
-  <section id="rechnung">
-    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg><span>Die Rechnung</span></p>
-    <h2>Es geht um zwölf gute Gespräche, nicht um einen Saal</h2>
-    <p>Eine Stunde, zwei gleichzeitig ansprechbare Personen, realistisch fünf Minuten pro Gespräch.
-    Das ergibt im besten Fall rund zwanzig Gespräche, realistisch zehn bis fünfzehn.</p>
-
-    <div class="figures">
-      <div class="fig">
-        <div class="fig-n">2</div>
-        <span class="fig-l">Mittelschulen in ganz Niederösterreich mit Erasmus+. Eine davon sind wir.</span>
-      </div>
-      <div class="fig">
-        <div class="fig-n">120</div>
-        <span class="fig-l">Schülerinnen und Schüler. Alle waren in Italien, nicht nur eine Auswahl.</span>
-      </div>
-      <div class="fig">
-        <div class="fig-n">60</div>
-        <span class="fig-l">Minuten, in denen wir ungefähr zwölf Gespräche führen können.</span>
-      </div>
-    </div>
-
-    <p style="margin-top:20px">Diese Zahl ist keine Ernüchterung, sondern eine Erleichterung. Zwölf
-    Gespräche sind planbar, und sie kalibrieren unseren Aufwand: Für eine Stunde bauen wir kein
-    Großprojekt, sondern fünf Dinge, die sitzen.</p>
-    <p>Sie hat aber zwei Folgen, die wir ernst nehmen müssen. <strong>Erstens:</strong> In fünf
-    Minuten überzeugt man niemanden von einer Praxis, man weckt nur Interesse. Der eigentliche
-    Ertrag ist deshalb die Mail in der Woche danach. <strong>Zweitens:</strong> Wer am Stand wartet,
-    verliert. Wer nicht gerade am Tisch steht, geht zu anderen Ständen, redet dort und bringt Leute
-    mit. Ein persönlich Hergeführter ist mehr wert als zehn zufällig Vorbeigehende.</p>
   </section>
 
   <section id="thema">
@@ -527,9 +583,52 @@
     und warum eigentlich?</em> Am Wort „gewonnen" würde ich am Stand ebenfalls nicht festhalten, so
     berechtigt es sich für uns anfühlt: Gewinnen setzt Verlierer voraus, und niemand steht gern vor
     einem Stand, der ihn dazu macht.</p>
+    <div class="box lead">
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4v17.2"/><path d="M5.2 8.2h13.6"/><path d="M8.6 15.4 5.2 8.2 1.8 15.4a3.4 3.4 0 0 0 6.8 0z"/><path d="M22.2 15.4 18.8 8.2l-3.4 7.2a3.4 3.4 0 0 0 6.8 0z"/></svg><span>Unser Leitgedanke</span></span>
+      <p class="lead-claim">Für die meisten Schulen ist Erasmus+ eine Belohnung.<br>Bei uns ist es ein Ausgleich.</p>
+      <p>Das ist die ganze Sache in zwei Sätzen, und es ist der Satz, der Diversität, Inklusion und
+      Chancengleichheit zusammenhält, ohne eines dieser Wörter zu benutzen. Chancengleichheit steckt
+      im Wort Ausgleich. Inklusion ist der Beweis, dass „alle" wörtlich gemeint ist. Und Diversität
+      entsteht von selbst, weil bei „alle" eben alle Hintergründe mitfahren, statt dass wir uns die
+      passenden aussuchen.</p>
+      <p>Der Satz ist außerdem kein Selbstlob, sondern eine These. Er widerspricht dem, wie die
+      meisten im Raum über Auslandsfahrten denken, und genau deshalb bleiben sie stehen.</p>
+    </div>
+
     <p>Unser Stolz ist vollkommen berechtigt, und er ist die Energie, die uns durch den Tag trägt.
     Er gehört nur an die richtige Stelle: <strong>in unsere Haltung, nicht in unseren Text.</strong>
     Stolze Leute, die großzügig weitergeben, sind anziehend. Stolze Texte sind abweisend.</p>
+  </section>
+
+  <section id="rechnung">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg><span>Die Rechnung</span></p>
+    <h2>Es geht um zwölf gute Gespräche, nicht um einen Saal</h2>
+    <p>Eine Stunde, zwei gleichzeitig ansprechbare Personen, realistisch fünf Minuten pro Gespräch.
+    Das ergibt im besten Fall rund zwanzig Gespräche, realistisch zehn bis fünfzehn.</p>
+
+    <div class="figures">
+      <div class="fig">
+        <div class="fig-n">2</div>
+        <span class="fig-l">Mittelschulen in ganz Niederösterreich mit Erasmus+. Eine davon sind wir.</span>
+      </div>
+      <div class="fig">
+        <div class="fig-n">120</div>
+        <span class="fig-l">Schülerinnen und Schüler. Alle waren in Italien, nicht nur eine Auswahl.</span>
+      </div>
+      <div class="fig">
+        <div class="fig-n">60</div>
+        <span class="fig-l">Minuten, in denen wir ungefähr zwölf Gespräche führen können.</span>
+      </div>
+    </div>
+
+    <p style="margin-top:20px">Diese Zahl ist keine Ernüchterung, sondern eine Erleichterung. Zwölf
+    Gespräche sind planbar, und sie kalibrieren unseren Aufwand: Für eine Stunde bauen wir kein
+    Großprojekt, sondern fünf Dinge, die sitzen.</p>
+    <p>Sie hat aber zwei Folgen, die wir ernst nehmen müssen. <strong>Erstens:</strong> In fünf
+    Minuten überzeugt man niemanden von einer Praxis, man weckt nur Interesse. Der eigentliche
+    Ertrag ist deshalb die Mail in der Woche danach. <strong>Zweitens:</strong> Wer am Stand wartet,
+    verliert. Wer nicht gerade am Tisch steht, geht zu anderen Ständen, redet dort und bringt Leute
+    mit. Ein persönlich Hergeführter ist mehr wert als zehn zufällig Vorbeigehende.</p>
   </section>
 
   <section id="botschaft">
@@ -640,6 +739,23 @@
       <figcaption>Vier Hürden, eine nach der anderen. Die Geschichte entsteht nicht daraus, dass wir angekommen sind, sondern daraus, wie wir über die einzelnen gekommen sind.</figcaption>
     </figure>
 
+    <h3>Unsere Geschichte in vier Sätzen</h3>
+    <p>Das ist der Rahmen, in den die Einzelgeschichten fallen. Vier Sätze, die jede und jeder von
+    uns auswendig kann, und die zusammen eine Bewegung ergeben statt einer Aufzählung.</p>
+    <div class="box quiet">
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.8 5.2h5.4A2.8 2.8 0 0 1 12 8v11a2.4 2.4 0 0 0-2.4-1.9H3.8z"/><path d="M20.2 5.2h-5.4A2.8 2.8 0 0 0 12 8v11a2.4 2.4 0 0 1 2.4-1.9h5.8z"/></svg><span>Der erzählbare Kern</span></span>
+      <ul>
+        <li>Eine Schule mit 120 Kindern im Triestingtal, ohne Projektstelle und ohne Extrabudget.</li>
+        <li>Sie bewirbt sich für ein Programm, das hier im Süden praktisch niemand beantragt.</li>
+        <li>Sie fährt nicht mit den Besten, sondern in zwei Etappen mit allen.</li>
+        <li>Und in zwei Wochen kommen die italienischen Kinder zu uns und schlafen auf Feldbetten
+        im Turnsaal, die wir selbst herrichten.</li>
+      </ul>
+    </div>
+    <p>Der vierte Satz ist durch den frühen Termin stärker geworden, nicht schwächer. Er steht in
+    der Zukunft, und damit ist unser Projekt kein abgeschlossener Bericht, sondern etwas, das gerade
+    läuft.</p>
+
     <h3>Vier Hürden, vier mögliche Geschichten</h3>
     <p>Die Begriffe sind keine vier Botschaften, sondern vier Hürdentypen, die wir überwunden haben.
     Das ist die Frageliste fürs Kollegium, und aus den Antworten entsteht der erzählbare Teil.</p>
@@ -685,13 +801,18 @@
     ehrliche und der bewegende Teil zusammen, und wir brauchen für beides nur einen Atemzug.</p>
     <figure class="fig-img">
       <img src="img/gastgeber-tuer.jpg" alt="Illustration: eine weit geöffnete Haustür am Abend, warmes Licht fällt auf die Straße, zwei Kinder mit Rucksäcken werden hereingebeten." loading="lazy" width="1400" height="788">
-      <figcaption>Gastgeber sein ist der Teil, über den andere Schulen nicht reden. Hier wird Diversität nicht besucht, sie findet im Wohnzimmer statt.</figcaption>
+      <figcaption>Ankommen und empfangen werden. Gastgeber sein ist der Teil, über den andere Schulen nicht reden, und der schwerere von beiden.</figcaption>
     </figure>
 
-    <p>Der Gegenbesuch im Oktober ist dafür vermutlich die bessere Bühne als unsere Hinfahrt. Fahren
-    kann man buchen. Wenn italienische Kinder bei uns untergebracht werden, findet Diversität nicht
-    als Ausflug statt, sondern im Wohnzimmer. Das ist das stärkere Bild, und es ist eines, das kein
-    anderer Stand hat.</p>
+    <p>Der Gegenbesuch ist dafür die bessere Bühne als unsere Hinfahrt, und durch den frühen
+    Messetermin steht er sogar noch bevor. Wir erzählen ihn also in der Gegenwart: In zwei Wochen
+    kommen sie zu uns. Das macht aus einem Bericht ein laufendes Vorhaben, und das hat an dem Tag
+    kein anderer Stand.</p>
+    <p>Das stärkste Detail daran ist der Turnsaal. Die italienischen Kinder schlafen bei uns auf
+    Feldbetten, die wir selbst herrichten. Das ist kein Notbehelf, das ist die ganze Idee in einem
+    Bild: <strong>Wir machen es mit dem, was wir haben.</strong> Gastfamilien kann nicht jede Schule
+    organisieren, einen Turnsaal hat jede. Damit ist auch dieser Teil nachmachbar, und genau danach
+    suchen die Leute an dem Tag.</p>
 
     <div class="box warn">
       <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6.1v5.3c0 4.3 3 8.2 7.4 9.4 4.4-1.2 7.4-5.1 7.4-9.4V6.1z"/><path d="m9.3 12.1 1.9 1.9 3.5-3.7"/></svg><span>Die Grenze, die wir vorher ziehen</span></span>
@@ -701,6 +822,57 @@
       zu machen, und bei allem, was nah geht, die Zustimmung der Familie. Für Fotos gilt das
       erst recht.</p>
     </div>
+  </section>
+
+  <section id="name">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 4.2 7.2v6.1c0 4.1 3.2 7.6 7.8 8.3 4.6-.7 7.8-4.2 7.8-8.3V7.2z"/><path d="M12 9.4v5.4M9.3 12.1h5.4"/></svg><span>Wie wir es nennen</span></p>
+    <h2>Ein Name, der nicht nach Formular klingt</h2>
+    <p>„Erasmus+" ist eine Programmbezeichnung, kein Titel. Das Wort klingt nach Antrag, Abrechnung
+    und Brüssel, und es erklärt niemandem, was bei uns passiert ist. „Wir sind nach Italien
+    gefahren" wiederum ist zwar verständlich, aber das hat jede zweite Schule schon gemacht. Wir
+    brauchen dazwischen etwas Eigenes.</p>
+    <p>Dabei sind es zwei verschiedene Dinge, die man leicht verwechselt. Der <strong>Name</strong>
+    bleibt und steht auf dem Chip, in der Mappe und in jeder Mail danach. Die
+    <strong>Schlagzeile</strong> gilt nur für diesen einen Tag und steht groß auf dem Poster. Der
+    Name ist ruhig, die Schlagzeile darf zuspitzen.</p>
+
+    <h3>Vier Namen zur Auswahl</h3>
+    <div class="names">
+      <div class="name pick">
+        <div class="name-t">Europa im Turnsaal</div>
+        <div class="name-p"><b>Was er kann</b>Überrascht sofort, weil zwei Welten aufeinandertreffen, die normalerweise nichts miteinander zu tun haben. Das Bild sitzt nach einer Sekunde, und es erzählt nebenbei die Botschaft, die wir eigentlich meinen: Wir machen das mit dem, was wir haben. Einen Turnsaal hat jede Schule, Gastfamilien nicht.</div>
+        <div class="name-c"><b>Zu bedenken</b>Betont den Gegenbesuch stärker als unsere Fahrt. Das ist in diesem Jahr ein Vorteil, weil der Besuch unmittelbar bevorsteht.</div>
+      </div>
+      <div class="name">
+        <div class="name-t">Die ganze Schule</div>
+        <div class="name-p"><b>Was er kann</b>Schlicht und unangreifbar. Trägt den Kern, ohne eine Zahl zu verwenden, die jedes Jahr anders lautet. Klingt nach Selbstverständlichkeit, und genau das ist die Pointe.</div>
+        <div class="name-c"><b>Zu bedenken</b>Wirkt allein etwas blass. Braucht die Schlagzeile daneben, um zu zünden.</div>
+      </div>
+      <div class="name">
+        <div class="name-t">Feldbetten und Fernweh</div>
+        <div class="name-p"><b>Was er kann</b>Der wärmste der vier. Erzählt beide Richtungen auf einmal, das Hinfahren und das Empfangen, und bleibt im Ohr. Für Chip und Mappe ein sehr guter Titel.</div>
+        <div class="name-c"><b>Zu bedenken</b>Etwas verspielt. Wer an dem Tag nur Zahlen und Anträge hören will, könnte ihn unterschätzen.</div>
+      </div>
+      <div class="name">
+        <div class="name-t">Kein Auswahlverfahren</div>
+        <div class="name-p"><b>Was er kann</b>Die schärfste Variante und exakt unser Leitgedanke. Provoziert die Rückfrage „wie meint ihr das?", und das ist am Stand genau das, was wir wollen.</div>
+        <div class="name-c"><b>Zu bedenken</b>Negativ formuliert. Als Dauername sperrig, als Untertitel unter einem der anderen aber stark.</div>
+      </div>
+    </div>
+
+    <h3>Drei Schlagzeilen fürs Poster</h3>
+    <p>Aus drei Metern lesbar, unter sieben Wörtern, oben statt mittig. Alle drei funktionieren mit
+    jedem der Namen darunter.</p>
+    <ul>
+      <li><strong>„Bei uns fahren alle."</strong> Die ruhigste. Setzt darauf, dass die Besucherin
+      selbst merkt, wie ungewöhnlich das ist.</li>
+      <li><strong>„Alle 120. Auch die, die noch nie weg waren."</strong> Die wärmste. Nennt die
+      Zahl und öffnet sofort die Frage nach den schwierigen Fällen.</li>
+      <li><strong>„Zwei Mittelschulen in NÖ. Warum eigentlich?"</strong> Die offensivste. Zieht die
+      Seltenheit nach vorn, aber als Frage an alle statt als Trophäe.</li>
+    </ul>
+    <p>Meine Empfehlung: die zweite oben groß, der gewählte Name klein darunter. Damit steht der
+    Beweis im Blickfeld und der Name wandert über den Chip in den Alltag der Leute.</p>
   </section>
 
   <section id="stand">
@@ -832,6 +1004,15 @@
     dazu und idealerweise ein Wort, das an das Gespräch erinnert. Der Chip ist ein Andenken, nicht
     nur ein Türöffner.</p>
 
+    <div class="box quiet">
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6.1v5.3c0 4.3 3 8.2 7.4 9.4 4.4-1.2 7.4-5.1 7.4-9.4V6.1z"/></svg><span>Rückfallebene, falls die Zeit nicht reicht</span></span>
+      <p>Bei knapp zwei Wochen Vorlauf ist die Lieferung der Chips das einzige Risiko, das wir nicht
+      selbst in der Hand haben. Deshalb gilt: Wenn uns bis spätestens zwei Tage nach der Bestellung
+      niemand eine verbindliche Zusage gibt, schwenken wir auf gedruckte Karten im
+      Visitenkartenformat mit demselben QR-Code um. Gleiche Funktion, weniger Haltbarkeit, dafür
+      kein Risiko. Diese Entscheidung treffen wir früh und nicht in der letzten Woche.</p>
+    </div>
+
     <h3>Braucht es den Flyer dann noch?</h3>
     <p>Nicht als Flyer, aber ein einzelnes Blatt hat weiterhin seinen Platz, und ich würde es
     abgestuft einsetzen. Der Chip geht an alle, mit denen wir reden, auch an die kurzen Kontakte. Das
@@ -899,14 +1080,84 @@
     deshalb zu haben, weil im Süden Niederösterreichs sonst niemand sie besetzt.</p>
   </section>
 
+  <section id="fahrplan">
+    <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg><span>Fahrplan</span></p>
+    <h2>Was bis wann fertig sein muss</h2>
+    <p>Bis zur Messe sind es knapp zwei Wochen, davon rund neun Arbeitstage. Die Reihenfolge unten
+    ist nach Vorlaufzeit sortiert, nicht nach Wichtigkeit: Zuerst kommt, was andere für uns
+    herstellen müssen, zuletzt, was wir selbst in der Hand haben.</p>
+
+    <div class="plan">
+      <div class="plan-row now">
+        <div class="plan-when">Sofort</div>
+        <ul>
+          <li><strong>Die Adresse hinter dem QR-Code festlegen.</strong> Blockiert alles am Chip. Eine
+          kurze eigene Adresse, die im Hintergrund weiterleitet, damit die Mappe später umziehen kann.</li>
+          <li><strong>Chips anfragen und bestellen</strong>, mit verbindlicher Zusage. Ohne Zusage
+          sofort auf gedruckte Karten umschwenken.</li>
+          <li><strong>Schulleitung entscheidet</strong> über die zwei Werte und gibt den Leitgedanken
+          frei. Ohne das kein Postertext.</li>
+        </ul>
+      </div>
+      <div class="plan-row">
+        <div class="plan-when">Diese Woche</div>
+        <ul>
+          <li><strong>Die vier Hürdenfragen im Kollegium durchgehen.</strong> Der kritische Pfad. Wenn
+          keine Konferenz ansteht, reichen vier Einzelgespräche mit den Mitgefahrenen.</li>
+          <li>Dabei gleich festhalten, was wir öffentlich erzählen dürfen.</li>
+          <li><strong>Akkreditierung klären</strong> und <strong>die Zahl beim OeAD bestätigen
+          lassen.</strong> Beides sind Anrufe.</li>
+          <li><strong>Namen und Schlagzeile auswählen.</strong></li>
+        </ul>
+      </div>
+      <div class="plan-row">
+        <div class="plan-when">Anfang nächster Woche</div>
+        <ul>
+          <li><strong>Poster in Druck geben.</strong> Letzter sinnvoller Termin. Kommt das Rollup nicht
+          mehr sicher, zwei A3 auf die Stehwand, und das ist ausdrücklich kein Notbehelf.</li>
+          <li><strong>Digitale Mappe aufsetzen</strong>, zunächst als Gerüst. Sie darf bis zum Messetag
+          wachsen, sie muss nur unter der QR-Adresse erreichbar sein.</li>
+          <li><strong>Ausstellungsstück auswählen.</strong> Kostet nichts und liegt vermutlich schon
+          im Schrank.</li>
+        </ul>
+      </div>
+      <div class="plan-row">
+        <div class="plan-when">Letzte Tage</div>
+        <ul>
+          <li><strong>Schritt-für-Schritt-Blatt</strong> auf dem Schuldrucker, rund 60 Stück.</li>
+          <li><strong>Kontaktliste</strong> als A4 mit Spalten für Name, Schule und Mail.</li>
+          <li><strong>Sprechzettel</strong> im Hosentaschenformat, für jede mitfahrende Person einer.</li>
+        </ul>
+      </div>
+      <div class="plan-row">
+        <div class="plan-when">Zwei Tage vorher</div>
+        <ul>
+          <li><strong>Trockenlauf im Konferenzzimmer, zwanzig Minuten.</strong> Jede Person spricht den
+          Kern einmal laut, die anderen spielen Besucher. Das ist der Schritt, der am ehesten ausfällt
+          und am meisten bringt.</li>
+          <li><strong>Rollen fix verteilen</strong>, inklusive der Regelung, wenn nur drei fahren.</li>
+          <li><strong>QR-Code auf drei Geräten testen</strong>, darunter ein altes.</li>
+        </ul>
+      </div>
+      <div class="plan-row">
+        <div class="plan-when">Die Woche danach</div>
+        <ul>
+          <li><strong>Die Mails rausschicken.</strong> Das ist der eigentliche Ertrag des Tages. Eine
+          Person ist dafür namentlich zuständig, sonst passiert es nicht.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="schritte">
     <p class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 7.2 5.6 8.6l2.6-2.8"/><path d="M4.2 13.4 5.6 14.8l2.6-2.8"/><path d="M4.6 19.6h3.4"/><path d="M11.6 7.4h8M11.6 13.6h8M11.6 19.6h8"/></svg><span>Nächste Schritte</span></p>
-    <h2>Was wir jetzt klären müssen</h2>
-    <p>Die ersten drei Punkte blockieren die inhaltliche Arbeit, die beiden zum QR-Code die
-    Chip-Produktion. Beides sollte parallel laufen, weil Lasern und Druck Vorlauf brauchen.</p>
+    <h2>Die offenen Punkte im Einzelnen</h2>
+    <p>Wann welcher Punkt dran ist, steht im Fahrplan darüber. Hier steht, worum es inhaltlich
+    geht. Die beiden zum QR-Code sind die eiligsten, weil ein gelaserter Code sich nicht mehr
+    ändern lässt.</p>
 
     <ul class="todo">
-      <li><span class="bx">□</span><span><b>Termin, Budget und wer mitfährt</b><span class="note">Davon hängt ab, ob der Gegenbesuch aus Italien im Oktober schon stattgefunden hat. Falls ja, haben wir frisches Material und die stärkere Hälfte der Geschichte, denn Gastgeber sein ist schwerer als fahren, und darüber redet sonst niemand. Rollup und Druck brauchen außerdem Vorlauf.</span></span></li>
+      <li><span class="bx">□</span><span><b>Budget und wer mitfährt</b><span class="note">Der Termin steht, der Gegenbesuch aus Italien liegt danach. Offen sind noch das Budget für Rollup und Chips und die Namen der drei bis fünf Personen, die mitfahren. Beides wird für den Fahrplan gebraucht.</span></span></li>
       <li><span class="bx">□</span><span><b>Die vier Hürdenfragen im Kollegium durchgehen</b><span class="note">Geld, Können, Sprache und Herkunft, Zutrauen: je eine Runde, wer sich an einen konkreten Fall erinnert. Das ist der dringendste Punkt, denn ohne diese Antworten bleibt unser Thema eine Zahl. Am besten mit allen, die mitgefahren sind, und im selben Zug festhalten, was wir davon öffentlich erzählen dürfen.</span></span></li>
       <li><span class="bx">□</span><span><b>Entscheiden, welche zwei Werte wir tragen</b><span class="note">Mein Vorschlag sind Chancengleichheit und Inklusion, weil wir sie mit „alle 120" und den Einzelfällen belegen können. Begabungsförderung würde ich weglassen. Diese Entscheidung sollte die Schulleitung treffen, bevor wir an Poster und Sprechtext gehen.</span></span></li>
       <li><span class="bx">□</span><span><b>Sind wir akkreditiert oder läuft es über Einzelprojekte?</b><span class="note">Für Schulleitungen ist das die entscheidende Information: Die Akkreditierung macht den großen Antrag einmalig, danach kommen die Mittel jährlich ohne neues Projektverfahren. Genau das wissen die meisten Schulen nicht, und genau das entkräftet das „zu überfordernd" am wirksamsten.</span></span></li>
@@ -917,12 +1168,12 @@
       <li><span class="bx">□</span><span><b>Der Gegenstand für den Tisch</b><span class="note">Echtes Material aus dem Projekt, kein Schaustück. Sammeln wir gemeinsam, sobald die Punkte oben geklärt sind.</span></span></li>
     </ul>
 
-    <p style="margin-top:22px">Sobald Termin und Punkt zwei stehen, arbeite ich daraus die konkrete
+    <p style="margin-top:22px">Sobald die Hürdenrunde im Kollegium gelaufen ist, arbeite ich daraus die konkrete
     Fassung aus: Schlagzeile und Postertext, den Neunzig-Sekunden-Kern zum Auswendiglernen, die
     Beschriftung des Chips, das Schritt-für-Schritt-Blatt und einen Zeitplan bis zur Messe.</p>
   </section>
 
-  <footer>Mittelschule Hirtenberg · Konzeptvorschlag Ideen-Börse · Stand 16.09.2026</footer>
+  <footer>Mittelschule Hirtenberg · Konzeptvorschlag Ideen-Börse · Stand 17.09.2026</footer>
 
 </div>
 
