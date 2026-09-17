@@ -335,8 +335,7 @@
   .names { display: grid; gap: 12px; margin: 22px 0; }
   .name {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 4px 14px;
+    gap: 10px;
     padding: 18px 20px;
     border: 1px solid var(--hairline);
     border-radius: 14px;
@@ -344,7 +343,6 @@
   }
   .name.pick { border-color: #9FCFC7; background: linear-gradient(150deg, var(--fill-accent) 0%, #F5FBFA 70%); }
   .name-t {
-    grid-column: 1 / -1;
     font-size: 18.5px;
     font-weight: bold;
     color: var(--accent-deep);
@@ -362,6 +360,7 @@
   .name-p, .name-c { font-size: 14.5px; line-height: 1.5; }
   .name-p b, .name-c b {
     font-size: 10.5px;
+    margin-bottom: 1px;
     letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--label);
@@ -814,6 +813,27 @@
     organisieren, einen Turnsaal hat jede. Damit ist auch dieser Teil nachmachbar, und genau danach
     suchen die Leute an dem Tag.</p>
 
+    <div class="box">
+      <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7.6h16v11.2H4z"/><path d="M4 11.2h16"/><path d="M7.4 15.2h3.2"/></svg><span>Wohin der Code führt, wenn die Karte mehrfach verwendet wird</span></span>
+      <p>Die Karten sollen auch beim Tag der offenen Tür und bei späteren Anlässen ausgegeben
+      werden. Das ist richtig gedacht, erzwingt aber eine Entscheidung: <strong>Der Code darf nicht
+      auf einen Anlass zeigen, sondern auf einen Verteiler.</strong></p>
+      <p>Zeigt er direkt auf die Erasmus-Mappe, ist die Karte beim Tag der offenen Tür wertlos.
+      Zeigt er auf die Startseite unserer Schulwebsite, ist sie an der Ideen-Börse wertlos, weil
+      niemand nach einem Erasmus-Gespräch eine Begrüßung sehen will. Beides wäre eine vertane
+      Karte.</p>
+      <p>Stattdessen führt der Code auf eine schlichte Verteilerseite, deren oberster Block
+      wechselt: Jetzt steht dort die Erasmus-Mappe, im Frühjahr der Tag der offenen Tür. Alles
+      andere bleibt dauerhaft darunter stehen. <strong>Die Mappe verschwindet nie, sie rutscht
+      nur.</strong> Wer die Karte im März von der Messe hervorholt, findet sie trotzdem.</p>
+      <p>Zwei Dinge sind dabei nicht verhandelbar. Erstens muss die Adresse
+      <strong>anlassneutral</strong> heißen, also nicht auf „erasmus" enden, sondern auf etwas, das
+      zur Karte gehört: „karte", „hallo" oder „mehr". Sobald der Anlass im Code steht, ist die
+      Mehrfachnutzung erledigt. Zweitens muss die Adresse <strong>uns gehören</strong>, also eine
+      eigene kurze Domain mit Weiterleitung, keine Unterseite eines Anbieters, den wir in drei
+      Jahren vielleicht wechseln.</p>
+    </div>
+
     <div class="box warn">
       <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6.1v5.3c0 4.3 3 8.2 7.4 9.4 4.4-1.2 7.4-5.1 7.4-9.4V6.1z"/><path d="m9.3 12.1 1.9 1.9 3.5-3.7"/></svg><span>Die Grenze, die wir vorher ziehen</span></span>
       <p>Wir erzählen von einzelnen Kindern vor fremden Lehrpersonen. Bei 120 Kindern in einer
@@ -836,29 +856,51 @@
     <strong>Schlagzeile</strong> gilt nur für diesen einen Tag und steht groß auf dem Poster. Der
     Name ist ruhig, die Schlagzeile darf zuspitzen.</p>
 
-    <h3>Vier Namen zur Auswahl</h3>
+    <h3>Sieben Namen zur Auswahl</h3>
+    <p>Vorweg eine Entlastung: Der Name muss nicht ewig halten. Auf die Karte kommt der
+    <strong>Schulname</strong>, sonst wäre sie an diesen einen Anlass gebunden. Der Projektname lebt
+    auf dem Poster und in der Mappe, und das erlaubt uns, mutiger zu sein.</p>
     <div class="names">
       <div class="name pick">
-        <div class="name-t">Europa im Turnsaal</div>
-        <div class="name-p"><b>Was er kann</b>Überrascht sofort, weil zwei Welten aufeinandertreffen, die normalerweise nichts miteinander zu tun haben. Das Bild sitzt nach einer Sekunde, und es erzählt nebenbei die Botschaft, die wir eigentlich meinen: Wir machen das mit dem, was wir haben. Einen Turnsaal hat jede Schule, Gastfamilien nicht.</div>
-        <div class="name-c"><b>Zu bedenken</b>Betont den Gegenbesuch stärker als unsere Fahrt. Das ist in diesem Jahr ein Vorteil, weil der Besuch unmittelbar bevorsteht.</div>
+        <div class="name-t">Weit kommen mit wenig</div>
+        <div class="name-p"><b>Was er kann</b>Beantwortet genau die Frage, mit der unser Publikum ankommt, nämlich ob das ohne Budget und Projektstelle geht. Der Name ist eine Antwort, kein Titel, und er klingt nach Handwerk statt nach Programm. Funktioniert auch als Satz im Gespräch: „Bei uns heißt das Weit kommen mit wenig."</div>
+        <div class="name-c"><b>Zu bedenken</b>Nennt Italien und Europa nicht. Braucht einen erklärenden Halbsatz daneben.</div>
       </div>
       <div class="name">
-        <div class="name-t">Die ganze Schule</div>
-        <div class="name-p"><b>Was er kann</b>Schlicht und unangreifbar. Trägt den Kern, ohne eine Zahl zu verwenden, die jedes Jahr anders lautet. Klingt nach Selbstverständlichkeit, und genau das ist die Pointe.</div>
-        <div class="name-c"><b>Zu bedenken</b>Wirkt allein etwas blass. Braucht die Schlagzeile daneben, um zu zünden.</div>
+        <div class="name-t">Wir haben Platz</div>
+        <div class="name-p"><b>Was er kann</b>Der wärmste und der einzige, der dreifach trägt: Platz im Bus, Platz im Turnsaal, Platz für jedes Kind. Klingt nach Haltung ohne ein einziges Wertwort, und er würde später auch über einem Tag der offenen Tür stehen können.</div>
+        <div class="name-c"><b>Zu bedenken</b>Sehr leise. Ohne die Schlagzeile daneben versteht ihn niemand sofort.</div>
+      </div>
+      <div class="name">
+        <div class="name-t">Niemand bleibt daheim</div>
+        <div class="name-p"><b>Was er kann</b>Die klarste Fassung von „alle". Man versteht sie in einer Sekunde, und sie erzeugt sofort die Rückfrage nach den Kindern, bei denen es schwierig war.</div>
+        <div class="name-c"><b>Zu bedenken</b>Negativ gebaut. Als Poster stark, als Dauername etwas schwer.</div>
+      </div>
+      <div class="name">
+        <div class="name-t">Zwei Busse, eine Schule</div>
+        <div class="name-p"><b>Was er kann</b>Erzählt unsere Logistik in vier Worten und macht die zwei Etappen zur Pointe statt zur Fußnote. Sehr konkret, sehr österreichisch, kein Marketingklang.</div>
+        <div class="name-c"><b>Zu bedenken</b>Bindet uns an die Zahl zwei, die sich in einem anderen Jahr ändern kann.</div>
+      </div>
+      <div class="name">
+        <div class="name-t">Mitfahrgelegenheit</div>
+        <div class="name-p"><b>Was er kann</b>Ein Wort, und ein doppelbödiges: Erasmus+ als Mitfahrgelegenheit für Kinder, die sonst nicht mitgefahren wären. Charmant, unprätentiös, bleibt hängen.</div>
+        <div class="name-c"><b>Zu bedenken</b>Verspielt. Wer an dem Tag nur Anträge und Zahlen hören will, nimmt ihn vielleicht nicht ernst.</div>
       </div>
       <div class="name">
         <div class="name-t">Feldbetten und Fernweh</div>
-        <div class="name-p"><b>Was er kann</b>Der wärmste der vier. Erzählt beide Richtungen auf einmal, das Hinfahren und das Empfangen, und bleibt im Ohr. Für Chip und Mappe ein sehr guter Titel.</div>
-        <div class="name-c"><b>Zu bedenken</b>Etwas verspielt. Wer an dem Tag nur Zahlen und Anträge hören will, könnte ihn unterschätzen.</div>
+        <div class="name-p"><b>Was er kann</b>Erzählt beide Richtungen auf einmal, das Hinfahren und das Empfangen. Der klangvollste der sieben und ein sehr guter Titel für die digitale Mappe.</div>
+        <div class="name-c"><b>Zu bedenken</b>Erklärt sich erst, wenn jemand die Geschichte vom Turnsaal kennt.</div>
       </div>
       <div class="name">
         <div class="name-t">Kein Auswahlverfahren</div>
-        <div class="name-p"><b>Was er kann</b>Die schärfste Variante und exakt unser Leitgedanke. Provoziert die Rückfrage „wie meint ihr das?", und das ist am Stand genau das, was wir wollen.</div>
-        <div class="name-c"><b>Zu bedenken</b>Negativ formuliert. Als Dauername sperrig, als Untertitel unter einem der anderen aber stark.</div>
+        <div class="name-p"><b>Was er kann</b>Die schärfste Variante und exakt unser Leitgedanke. Provoziert die Rückfrage „wie meint ihr das?", und genau die wollen wir.</div>
+        <div class="name-c"><b>Zu bedenken</b>Als Dauername sperrig. Stark als Untertitel unter einem der anderen.</div>
       </div>
     </div>
+    <p>Meine Empfehlung ist <strong>Weit kommen mit wenig</strong>, weil unser Publikum an dem Tag
+    nach Machbarkeit sucht und der Name die Antwort schon im Titel gibt. Wer es wärmer mag, nimmt
+    <strong>Wir haben Platz</strong> und stellt <em>Kein Auswahlverfahren</em> als Untertitel
+    darunter.</p>
 
     <h3>Drei Schlagzeilen fürs Poster</h3>
     <p>Aus drei Metern lesbar, unter sieben Wörtern, oben statt mittig. Alle drei funktionieren mit
@@ -976,14 +1018,17 @@
     Gebrauchswert hat.</p>
     <figure class="fig-img">
       <img src="img/chip.jpg" alt="Foto: ein kleiner runder Metallanhänger mit blanker Oberfläche liegt neben einem Schlüsselbund auf einem alten Holztisch im Fensterlicht." loading="lazy" width="1400" height="788">
-      <figcaption>So sieht der Chip aus, wenn die Messe längst vorbei ist: am Schlüsselbund, auf dem Schreibtisch, nicht im Altpapier.</figcaption>
+      <figcaption>So sieht die Karte aus, wenn die Messe längst vorbei ist: in der Geldbörse, auf dem Schreibtisch, nicht im Altpapier. (Motiv noch als runder Anhänger, wird auf Kartenformat nachgezogen.)</figcaption>
     </figure>
 
-    <p>Unsere Lösung sind <strong>200 Blech-Chips mit eingelasertem QR-Code</strong>, die zu einer
-    digitalen Mappe mit Unterlagen, Checklisten und Erfolgsgeschichten führen. Das ist dem Flyer aus
-    drei Gründen überlegen: Metall wirft niemand weg, weil es sich wertig anfühlt und Gewicht hat.
-    Es landet am Schlüsselbund oder auf dem Schreibtisch statt im Altpapier, bleibt also monatelang
-    sichtbar. Und der Inhalt dahinter kann wachsen, ohne dass wir etwas nachdrucken müssen.</p>
+    <p>Unsere Lösung sind <strong>200 Metallkarten im Kreditkartenformat</strong> mit eingelasertem
+    QR-Code. Das ist dem Flyer aus drei Gründen überlegen: Metall wirft niemand weg, weil es sich
+    wertig anfühlt und Gewicht hat. Es landet in der Geldbörse oder auf dem Schreibtisch statt im
+    Altpapier und bleibt damit monatelang sichtbar. Und der Inhalt dahinter kann wachsen, ohne dass
+    wir etwas nachdrucken müssen.</p>
+    <p>Das Kreditkartenformat hat gegenüber einem kleinen Anhänger einen Vorteil, den wir nutzen
+    sollten: Es ist Platz für Text. Neben den Code gehören unser <strong>Schulname</strong> und eine
+    Zeile, die sagt, was einen hinter dem Code erwartet.</p>
     <p>Nicht zu verwechseln ist der Chip mit dem Gegenstand auf dem Tisch. Der Chip geht mit,
     das Ausstellungsstück bleibt da. Beide arbeiten mit derselben Kraft, nämlich dass etwas in der
     Hand ein Gespräch von selbst eröffnet, aber sie ersetzen einander nicht.</p>
@@ -991,18 +1036,17 @@
     <div class="box warn">
       <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.2 2.8 19.8h18.4z"/><path d="M12 10v3.6"/><path d="M12 16.9h.01"/></svg><span>Der eine Punkt, den wir nicht vergeigen dürfen</span></span>
       <p>Ein gelaserter QR-Code ist für immer. Zeigt er auf eine Adresse, die in zwei Jahren tot
-      ist, sind 200 Chips Abfall und jeder, der ihn dann scannt, landet im Nichts.</p>
+      ist, sind 200 Karten Abfall und jeder, der ihn dann scannt, landet im Nichts.</p>
       <p>Deshalb darf im Code <strong>niemals ein Link auf einen Cloud-Ordner</strong> stehen, denn
       solche Adressen ändern sich. Es gehört eine kurze, eigene Adresse hinein, die wir dauerhaft
       kontrollieren und die im Hintergrund weiterleitet, wohin wir wollen. Dann können wir die Mappe
       jederzeit umziehen, umbauen oder erweitern, und die Chips funktionieren trotzdem. Diese
-      Adresse muss stehen und getestet sein, bevor der erste Chip in den Laser geht.</p>
+      Adresse muss stehen und getestet sein, bevor die erste Karte in den Laser geht.</p>
     </div>
 
-    <p>Ein zweiter Punkt aus derselben Logik: Auf dem Chip darf nicht nur der Code sein. Ein nackter
-    QR-Code sagt in drei Wochen niemandem mehr, wofür er war. Es gehört zumindest unser Schulname
-    dazu und idealerweise ein Wort, das an das Gespräch erinnert. Der Chip ist ein Andenken, nicht
-    nur ein Türöffner.</p>
+    <p>Ein zweiter Punkt aus derselben Logik: Auf der Karte darf nicht nur der Code sein. Ein nackter
+    QR-Code sagt in drei Wochen niemandem mehr, wofür er war. Deshalb der Schulname und eine Zeile,
+    die neugierig macht. Die Karte ist ein Andenken, nicht nur ein Türöffner.</p>
 
     <div class="box quiet">
       <span class="box-label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6.1v5.3c0 4.3 3 8.2 7.4 9.4 4.4-1.2 7.4-5.1 7.4-9.4V6.1z"/></svg><span>Rückfallebene, falls die Zeit nicht reicht</span></span>
@@ -1091,8 +1135,10 @@
       <div class="plan-row now">
         <div class="plan-when">Sofort</div>
         <ul>
-          <li><strong>Die Adresse hinter dem QR-Code festlegen.</strong> Blockiert alles am Chip. Eine
-          kurze eigene Adresse, die im Hintergrund weiterleitet, damit die Mappe später umziehen kann.</li>
+          <li><strong>Die Adresse hinter dem QR-Code festlegen.</strong> Blockiert alles Weitere. Eine
+          kurze eigene Domain, anlassneutral benannt, die auf die Verteilerseite weiterleitet.</li>
+          <li><strong>Kartenlayout festlegen:</strong> Schulname, eine Zeile Erklärung, Code. Kein
+          Projektname, damit die Karte auch beim Tag der offenen Tür passt.</li>
           <li><strong>Chips anfragen und bestellen</strong>, mit verbindlicher Zusage. Ohne Zusage
           sofort auf gedruckte Karten umschwenken.</li>
           <li><strong>Schulleitung entscheidet</strong> über die zwei Werte und gibt den Leitgedanken
